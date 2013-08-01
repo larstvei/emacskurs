@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>handout</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="title" content="handout"/>
+    <meta name="generator" content="Org-mode"/>
+    <meta name="generated" content="2013-03-17 22:01:20 CET"/>
+    <meta name="author" content="Lars Tveito"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <style type="text/css">
+      <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+        border: 1pt solid #AEBDCC;
+        background-color: #F3F5F7;
+        padding: 5pt;
+        font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+    </style>
+    <script type="text/javascript">
+      <!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+    </script>
+
+  </head>
+  <body>
+
+    <div id="preamble">
+
+    </div>
+
+    <div id="content">
+      <!-- <h1 class="title">handout</h1> -->
+
+      <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+        <caption></caption>
+        <colgroup><col class="left" /><col class="left" />
+        </colgroup>
+        <thead>
+          <tr><th scope="col" class="left">Tastekombinasjon</th><th scope="col" class="left">Beskrivelse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="left">Prefikser</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-x</td><td class="left">Globale kommandoer</td></tr>
+          <tr><td class="left">C-c</td><td class="left">Lokale kommandoer</td></tr>
+          <tr><td class="left">C-h</td><td class="left">Hjelp</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Komme seg ut</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-x C-c</td><td class="left">save-buffers-kill-terminal</td></tr>
+          <tr><td class="left">C-g</td><td class="left">keyboard-quit</td></tr>
+          <tr><td class="left">ESC ESC ESC</td><td class="left">keyboard-escape-quit</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Flytte markør</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-f</td><td class="left">forward-char</td></tr>
+          <tr><td class="left">C-b</td><td class="left">backward-char</td></tr>
+          <tr><td class="left">M-f</td><td class="left">forward-word</td></tr>
+          <tr><td class="left">M-b</td><td class="left">backward-word</td></tr>
+          <tr><td class="left">C-a</td><td class="left">move-beginning-of-line</td></tr>
+          <tr><td class="left">C-e</td><td class="left">move-end-of-line</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Bla Rundt</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-v</td><td class="left">scroll-up-command</td></tr>
+          <tr><td class="left">M-v</td><td class="left">scroll-down-command</td></tr>
+          <tr><td class="left">M-&lt;</td><td class="left">beginning-of-buffer</td></tr>
+          <tr><td class="left">M-&gt;</td><td class="left">end-of-buffer</td></tr>
+          <tr><td class="left">C-l</td><td class="left">recenter-top-bottom</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Kill og yank</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-w</td><td class="left">kill-region</td></tr>
+          <tr><td class="left">M-w</td><td class="left">kill-ring-save</td></tr>
+          <tr><td class="left">C-k</td><td class="left">kill-line</td></tr>
+          <tr><td class="left">C-y</td><td class="left">yank</td></tr>
+          <tr><td class="left">M-y</td><td class="left">yank-pop</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Feiloppretting</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-d</td><td class="left">delete-char</td></tr>
+          <tr><td class="left">M-d</td><td class="left">kill-word</td></tr>
+          <tr><td class="left">C-_</td><td class="left">undo</td></tr>
+          <tr><td class="left">C-t</td><td class="left">transpose-chars</td></tr>
+          <tr><td class="left">M-t</td><td class="left">transpose-words</td></tr>
+          <tr><td class="left">C-x C-t</td><td class="left">transpose-lines</td></tr>
+          <tr><td class="left">M-q</td><td class="left">fill-paragraph</td></tr>
+          <tr><td class="left">M-u</td><td class="left">upcase-word</td></tr>
+          <tr><td class="left">M-l</td><td class="left">downcase-word</td></tr>
+          <tr><td class="left">M-c</td><td class="left">capitalize-word</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Markering av tekst</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-SPC</td><td class="left">set-mark-command</td></tr>
+          <tr><td class="left">C-x h</td><td class="left">mark-whole-buffer</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Lagre og sånt</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-x C-f</td><td class="left">find-file</td></tr>
+          <tr><td class="left">C-x C-s</td><td class="left">save-buffer</td></tr>
+          <tr><td class="left">C-x C-w</td><td class="left">write-file</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Vinduer</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-x 2</td><td class="left">split-window-below</td></tr>
+          <tr><td class="left">C-x 3</td><td class="left">split-window-right</td></tr>
+          <tr><td class="left">C-x 1</td><td class="left">delete-other-windows</td></tr>
+          <tr><td class="left">C-x 0</td><td class="left">delete-window</td></tr>
+          <tr><td class="left">C-x o</td><td class="left">other-window</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Buffere</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-x b</td><td class="left">switch-to-buffer</td></tr>
+          <tr><td class="left">C-x k</td><td class="left">kill-buffer</td></tr>
+          <tr><td class="left">C-x &lt;left&gt;</td><td class="left">previous-buffer</td></tr>
+          <tr><td class="left">C-x &lt;right&gt;</td><td class="left">next-buffer</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Kommandoer</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">M-x</td><td class="left">execute-extended-command</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Søking</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-s</td><td class="left">isearch-forward</td></tr>
+          <tr><td class="left">C-r</td><td class="left">isearch-backward</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Hjelp til selvhjelp</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">C-h k</td><td class="left">Info-goto-emacs-key-command-node</td></tr>
+          <tr><td class="left">C-h f</td><td class="left">Info-goto-emacs-command-node</td></tr>
+          <tr><td class="left">C-h m</td><td class="left">describe-mode</td></tr>
+          <tr><td class="left">C-h a</td><td class="left">apropos-command</td></tr>
+          <tr><td class="left">C-h C-h, C-h ?</td><td class="left">help-for-help</td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">Programmering</td><td class="left"></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td class="left">TAB</td><td class="left">indent-for-tab-command</td></tr>
+          <tr><td class="left">M-;</td><td class="left">comment-dwim</td></tr>
+          <tr><td class="left">M-g g</td><td class="left">goto-line</td></tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+    <div id="postamble">
+      <p class="date">Date: 2013-03-17 22:01:20 CET</p>
+      <p class="author">Author: Lars Tveito</p>
+      <p class="creator">Org version 7.8.11 with Emacs version 24</p>
+      <!-- <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a> -->
+
+    </div>
+  </body>
+</html>

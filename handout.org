@@ -1,0 +1,103 @@
+|---------------------+----------------------------------|
+| Tastekombinasjon    | Beskrivelse                      |
+|---------------------+----------------------------------|
+| Prefikser           |                                  |
+|---------------------+----------------------------------|
+| C-x                 | Globale kommandoer               |
+| C-c                 | Lokale kommandoer                |
+| C-h                 | Hjelp                            |
+|---------------------+----------------------------------|
+| Komme seg ut        |                                  |
+|---------------------+----------------------------------|
+| C-x C-c             | save-buffers-kill-terminal       |
+| C-g                 | keyboard-quit                    |
+| ESC ESC ESC         | keyboard-escape-quit             |
+|---------------------+----------------------------------|
+| Flytte markør       |                                  |
+|---------------------+----------------------------------|
+| C-f                 | forward-char                     |
+| C-b                 | backward-char                    |
+| M-f                 | forward-word                     |
+| M-b                 | backward-word                    |
+| C-a                 | move-beginning-of-line           |
+| C-e                 | move-end-of-line                 |
+|---------------------+----------------------------------|
+| Bla Rundt           |                                  |
+|---------------------+----------------------------------|
+| C-v                 | scroll-up-command                |
+| M-v                 | scroll-down-command              |
+| M-<                 | beginning-of-buffer              |
+| M->                 | end-of-buffer                    |
+| C-l                 | recenter-top-bottom              |
+|---------------------+----------------------------------|
+| Kill og yank        |                                  |
+|---------------------+----------------------------------|
+| C-w                 | kill-region                      |
+| M-w                 | kill-ring-save                   |
+| C-k                 | kill-line                        |
+| C-y                 | yank                             |
+| M-y                 | yank-pop                         |
+|---------------------+----------------------------------|
+| Feiloppretting      |                                  |
+|---------------------+----------------------------------|
+| C-d                 | delete-char                      |
+| M-d                 | kill-word                        |
+| C-_                 | undo                             |
+| C-t                 | transpose-chars                  |
+| M-t                 | transpose-words                  |
+| C-x C-t             | transpose-lines                  |
+| M-q                 | fill-paragraph                   |
+| M-u                 | upcase-word                      |
+| M-l                 | downcase-word                    |
+| M-c                 | capitalize-word                  |
+|---------------------+----------------------------------|
+| Markering av tekst  |                                  |
+|---------------------+----------------------------------|
+| C-SPC               | set-mark-command                 |
+| C-x h               | mark-whole-buffer                |
+|---------------------+----------------------------------|
+| Lagre og sånt       |                                  |
+|---------------------+----------------------------------|
+| C-x C-f             | find-file                        |
+| C-x C-s             | save-buffer                      |
+| C-x C-w             | write-file                       |
+|---------------------+----------------------------------|
+| Vinduer             |                                  |
+|---------------------+----------------------------------|
+| C-x 2               | split-window-below               |
+| C-x 3               | split-window-right               |
+| C-x 1               | delete-other-windows             |
+| C-x 0               | delete-window                    |
+| C-x o               | other-window                     |
+|---------------------+----------------------------------|
+| Buffere             |                                  |
+|---------------------+----------------------------------|
+| C-x b               | switch-to-buffer                 |
+| C-x k               | kill-buffer                      |
+| C-x <left>          | previous-buffer                  |
+| C-x <right>         | next-buffer                      |
+|---------------------+----------------------------------|
+| Kommandoer          |                                  |
+|---------------------+----------------------------------|
+| M-x                 | execute-extended-command         |
+|---------------------+----------------------------------|
+| Søking              |                                  |
+|---------------------+----------------------------------|
+| C-s                 | isearch-forward                  |
+| C-r                 | isearch-backward                 |
+|---------------------+----------------------------------|
+| Hjelp til selvhjelp |                                  |
+|---------------------+----------------------------------|
+| C-h k               | Info-goto-emacs-key-command-node |
+| C-h f               | Info-goto-emacs-command-node     |
+| C-h m               | describe-mode                    |
+| C-h a               | apropos-command                  |
+| C-h C-h, C-h ?      | help-for-help                    |
+|---------------------+----------------------------------|
+| Programmering       |                                  |
+|---------------------+----------------------------------|
+| TAB                 | indent-for-tab-command           |
+| M-;                 | comment-dwim                     |
+| M-g g               | goto-line                        |
+|---------------------+----------------------------------|
+

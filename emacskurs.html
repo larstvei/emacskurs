@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>emacskurs</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="emacskurs"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-08-01 03:06:33 CEST"/>
+<meta name="author" content="Lars Tveito"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/railscast/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div class="layout">
+<div id="controls"><!-- no edit --></div>
+<div id="currentSlide"><!-- no edit --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Lars Tveito - emacskurs</h1>
+</div>
+</div>
+
+<div class="presentation">
+<div class="slide">
+<h1>emacskurs</h1>
+<h1>Lars Tveito</h1>
+<h1>2013-08-01</h1>
+</div>
+<h1 class="title">emacskurs</h1>
+
+
+<div id="table-of-contents" class="slide">
+<h1>Table of Contents</h1>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Emacskurs</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Intro</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 Hva er Emacs?</a></li>
+<li><a href="#sec-1-1-2">1.1.2 Buffere, vinduer og rammer</a></li>
+<li><a href="#sec-1-1-3">1.1.3 Modes</a></li>
+<li><a href="#sec-1-1-4">1.1.4 Tips</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 Taster</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 Terminologi for taster</a></li>
+<li><a href="#sec-1-2-2">1.2.2 Prefikstaster</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 Komme seg ut</a></li>
+<li><a href="#sec-1-4">1.4 Tekstredigering</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 Flytte markør</a></li>
+<li><a href="#sec-1-4-2">1.4.2 Bla rundt</a></li>
+<li><a href="#sec-1-4-3">1.4.3 Kill og yank</a></li>
+<li><a href="#sec-1-4-4">1.4.4 Feiloppretting</a></li>
+<li><a href="#sec-1-4-5">1.4.5 Markering av tekst</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5 Filer, vinduer og buffere</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 Filer</a></li>
+<li><a href="#sec-1-5-2">1.5.2 Vinduer</a></li>
+<li><a href="#sec-1-5-3">1.5.3 Buffere</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">1.6 Kommandoer</a></li>
+<li><a href="#sec-1-7">1.7 Søking</a></li>
+<li><a href="#sec-1-8">1.8 Hjelp til selvhjelp</a></li>
+<li><a href="#sec-1-9">1.9 Programmering</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-1 slide">
+<h1 id="sec-1"><span class="section-number-1">1</span> Emacskurs</h1>
+<div class="outline-text-1" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-2">
+<h2 id="sec-1-1"><span class="section-number-2">1.1</span> Intro</h2>
+<div class="outline-text-2" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-3">
+<h3 id="sec-1-1-1"><span class="section-number-3">1.1.1</span> Hva er Emacs?</h3>
+<div class="outline-text-3" id="text-1-1-1">
+
+
+<ul>
+<li>Teksteditor
+</li>
+<li>Utvidbar (Elisp)
+</li>
+<li>Over 30 år gammel
+</li>
+<li>Over 2500 innebygde kommandoer
+</li>
+<li>Fri programvare
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-3">
+<h3 id="sec-1-1-2"><span class="section-number-3">1.1.2</span> Buffere, vinduer og rammer</h3>
+<div class="outline-text-3" id="text-1-1-2">
+
+
+<ul>
+<li>Tekst vises i buffere
+</li>
+<li>Du kan ha så mange åpene buffere du vil
+</li>
+<li>En fil åpnes i et nytt buffer
+</li>
+<li>Minibufferet (nederste linje), brukes til å skrive inn filnavn,
+      buffernavn, etc&hellip;
+
+</li>
+<li>Emacs åpnes i en ramme
+</li>
+<li>En kan ha flere vinduer i samme ramme
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-3">
+<h3 id="sec-1-1-3"><span class="section-number-3">1.1.3</span> Modes</h3>
+<div class="outline-text-3" id="text-1-1-3">
+
+
+<ul>
+<li>Major modes
+<ul>
+<li>hvert buffer har kun én aktiv major mode
+</li>
+<li>en major mode gir deg funksjonalitet for en bestemt type
+        tekstredigering
+</li>
+<li>de fleste programmeringsspråk har sin egen major mode
+
+</li>
+</ul>
+
+</li>
+<li>Minor modes
+<ul>
+<li>du kan ha så mange aktive minor modes du ønsker
+</li>
+<li>en minor mode tilbyr tilleggsfunksjonalitet
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+<p>
+    Modes tilføyer ofte egne tastekombinasjoner!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-3">
+<h3 id="sec-1-1-4"><span class="section-number-3">1.1.4</span> Tips</h3>
+<div class="outline-text-3" id="text-1-1-4">
+
+
+<p>
+    Emacs er annerledes å bruke enn mange andre programmer, så det
+    krever tilvenning.
+</p>
+<ul>
+<li>i begynnelsen
+<ul>
+<li>les og gjør «learn-by-doing tutorial» (C-h t)
+</li>
+<li>tving deg selv til å bruke de kommandoene du lærer til de
+        sitter i fingrene
+</li>
+<li>unngå «pek og klikk»
+
+</li>
+</ul>
+
+</li>
+<li>etter hvert (for spesielt interesserte)
+<ul>
+<li>skriv din egen configfil
+</li>
+<li>lær litt elisp, og skriv dine egne funksjoner
+
+</li>
+</ul>
+
+</li>
+<li>annet
+<ul>
+<li>gjør CAPS-LOCK om til en ekstra Control (Ctrl)
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-2">
+<h2 id="sec-1-2"><span class="section-number-2">1.2</span> Taster</h2>
+<div class="outline-text-2" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-3">
+<h3 id="sec-1-2-1"><span class="section-number-3">1.2.1</span> Terminologi for taster</h3>
+<div class="outline-text-3" id="text-1-2-1">
+
+
+<ul>
+<li>C-&lt;any&gt;
+       Control
+
+</li>
+<li>M-&lt;any&gt;
+       Meta er Alt på de fleste maskiner (alternativt ESC)
+</li>
+</ul>
+
+
+<p>
+    &lt;any&gt; betyr et vilkårlig tegn (eller tastekombinasjon)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-3">
+<h3 id="sec-1-2-2"><span class="section-number-3">1.2.2</span> Prefikstaster</h3>
+<div class="outline-text-3" id="text-1-2-2">
+
+
+<ul>
+<li>C-x &lt;any&gt;
+       prefiks for globale kommandoer
+
+</li>
+<li>C-c &lt;any&gt;
+       prefiks for lokale kommandoer
+       (har ikke alltid samme funksjon!)
+
+</li>
+<li>C-h &lt;any&gt;
+       prefiks for hjelp
+</li>
+</ul>
+
+
+<p>
+    Alle tastekombinasjon som ikke er en prefiks er bundet til en
+    kommando!
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-2">
+<h2 id="sec-1-3"><span class="section-number-2">1.3</span> Komme seg ut</h2>
+<div class="outline-text-2" id="text-1-3">
+
+
+<ul>
+<li>C-x C-c
+     avslutt emacs
+
+</li>
+<li>C-g
+     avbryt
+     (bruk hvis du ikke skjønner hva emacs holder på med!)
+
+</li>
+<li>ESC ESC ESC
+     (bruk hvis C-g ikke hjalp)
+
+</li>
+<li>C-&lt;prefix&gt; C-g
+     er udefinert
+     (Dvs. C-g kan brukes til å avbryte prefiks)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-2">
+<h2 id="sec-1-4"><span class="section-number-2">1.4</span> Tekstredigering</h2>
+<div class="outline-text-2" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-3">
+<h3 id="sec-1-4-1"><span class="section-number-3">1.4.1</span> Flytte markør</h3>
+<div class="outline-text-3" id="text-1-4-1">
+
+
+<ul>
+<li>C-f, C-b
+      flytt markøren ett tegn frem/tilbake
+
+</li>
+<li>M-f, M-b
+      flytt markøren ett ord frem/tilbake
+
+</li>
+<li>C-a, C-e
+      flytt markøren til begynnelsen/slutten av linja
+
+</li>
+<li>C-p, C-n
+      flytt markøren til forrige/neste linje
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-2" class="outline-3">
+<h3 id="sec-1-4-2"><span class="section-number-3">1.4.2</span> Bla rundt</h3>
+<div class="outline-text-3" id="text-1-4-2">
+
+
+<ul>
+<li>C-v, M-v
+      scroll ned/opp en side
+
+</li>
+<li>M-&lt;, M-&gt;
+      gå til begynnelsen/slutten av bufferet
+
+</li>
+<li>C-l
+      vis slik at markøren er i senter/toppen/bunnen
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-3" class="outline-3">
+<h3 id="sec-1-4-3"><span class="section-number-3">1.4.3</span> Kill og yank</h3>
+<div class="outline-text-3" id="text-1-4-3">
+
+
+<ul>
+<li>C-w
+      kill, tilsvarer cut
+
+</li>
+<li>C-y
+      yank, tilsvarer paste
+
+</li>
+<li>M-w
+      lagre til kill-ring, tilsvarer copy
+
+</li>
+<li>C-k
+      kill, drepe resten av en linje
+
+</li>
+<li>M-y, må etterfølges av C-y
+      yank-pop, går lenger tilbake på kill-ring
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-4" class="outline-3">
+<h3 id="sec-1-4-4"><span class="section-number-3">1.4.4</span> Feiloppretting</h3>
+<div class="outline-text-3" id="text-1-4-4">
+
+
+<ul>
+<li>C-d, M-d
+      fjern neste bokstav/ord
+
+</li>
+<li>C-_
+      undo! 
+
+</li>
+<li>C-t, M-t
+      bytt om to bokstaver/ord
+
+</li>
+<li>C-x C-t
+      bytt om to linjer
+
+</li>
+<li>M-q
+      plasserer om tekst i en paragraf slik at linjene ikke overstiger
+      70 tegn (den ødelegger ikke syntaks i programmeringsmodes)
+
+</li>
+<li>M-u, M-l, M-c
+      gjør neste ord til UPPERCASE/lowercase/Capital-Case
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-5" class="outline-3">
+<h3 id="sec-1-4-5"><span class="section-number-3">1.4.5</span> Markering av tekst</h3>
+<div class="outline-text-3" id="text-1-4-5">
+
+
+<ul>
+<li>C-SPC
+      marker tekst
+
+</li>
+<li>C-x h
+      marker all tekst
+</li>
+</ul>
+
+
+<p>
+    Bruk i kombinasjon med M-w, C-w og TAB
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-2">
+<h2 id="sec-1-5"><span class="section-number-2">1.5</span> Filer, vinduer og buffere</h2>
+<div class="outline-text-2" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-3">
+<h3 id="sec-1-5-1"><span class="section-number-3">1.5.1</span> Filer</h3>
+<div class="outline-text-3" id="text-1-5-1">
+
+
+<ul>
+<li>C-x C-f
+      åpne fil
+      (hvis den ikke finnes fra før opprettes den)
+
+</li>
+<li>C-x C-s
+      lagre buffer
+
+</li>
+<li>C-x C-w
+      skrive til fil (tilsvarende «lagre som&hellip;»)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-3">
+<h3 id="sec-1-5-2"><span class="section-number-3">1.5.2</span> Vinduer</h3>
+<div class="outline-text-3" id="text-1-5-2">
+
+
+<ul>
+<li>C-x 2, C-x 3
+      splitt et vindu vertikalt/horisontalt
+
+</li>
+<li>C-x 1
+      gjør det aktive vinduet til det eneste vinduet
+
+</li>
+<li>C-x 0
+      lukk det aktive vinduet
+
+</li>
+<li>C-x o
+      bytt fokus til et annet vindu
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-3" class="outline-3">
+<h3 id="sec-1-5-3"><span class="section-number-3">1.5.3</span> Buffere</h3>
+<div class="outline-text-3" id="text-1-5-3">
+
+
+<ul>
+<li>C-x b RET
+      bytt buffer
+      (siste besøkte buffer er default)
+
+</li>
+<li>C-x k RET
+      drep (kill) buffer
+      (det aktive bufferet er default)
+
+</li>
+<li>C-x left, C-x right
+      en annen måte å bytter buffer
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-2">
+<h2 id="sec-1-6"><span class="section-number-2">1.6</span> Kommandoer</h2>
+<div class="outline-text-2" id="text-1-6">
+
+
+<ul>
+<li>M-x function RET
+     lar deg kalle en hvilken som helst kommando med navn
+
+</li>
+<li>M-x replace-string RET erstatt RET med RET
+     tilsvarer «search and replace»
+
+</li>
+<li>M-x query-replace RET erstatt RET med RET &hellip; y/n
+     samme som replace-string, men du kan velge hva som skal
+     erstattes
+</li>
+</ul>
+
+
+<p>
+   Bruk TAB for autocomplete!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-2">
+<h2 id="sec-1-7"><span class="section-number-2">1.7</span> Søking</h2>
+<div class="outline-text-2" id="text-1-7">
+
+
+<ul>
+<li>C-s
+     søk fremover i bufferet
+
+</li>
+<li>C-r
+     søk bakover i bufferet
+</li>
+</ul>
+
+
+<p>
+   Dette er en effektiv måte å flytte markøren!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-8" class="outline-2">
+<h2 id="sec-1-8"><span class="section-number-2">1.8</span> Hjelp til selvhjelp</h2>
+<div class="outline-text-2" id="text-1-8">
+
+
+<ul>
+<li>C-h k
+     bruk hvis du lurer på hva en tastekombinasjon gjør
+
+</li>
+<li>C-h f
+     bruk hvis du kjenner navnet på en funksjon, men ikke vet hva hva
+     den gjør
+
+</li>
+<li>C-h m
+     gir deg informasjon om moden du er i
+     (bl.a tastekombinasjoner som er spesielle for moden)
+
+</li>
+<li>C-h a
+     apropos, lar deg søke i hjelpen
+
+</li>
+<li>C-h C-h, C-h ?
+     gir deg hjelp om hjelpen
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-9" class="outline-2">
+<h2 id="sec-1-9"><span class="section-number-2">1.9</span> Programmering</h2>
+<div class="outline-text-2" id="text-1-9">
+
+
+<ul>
+<li>TAB indenterer riktig 
+     (dersom indenteringen er gal er det et tegn på at det er noe galt
+     i koden!)
+
+</li>
+<li>M-;
+     kommenterer ut et markert område
+
+</li>
+<li>M-x compile RET compile-command RET
+     lar deg kompilere i Emacs
+     (gir trykkbare linker til der feil oppstod)
+
+</li>
+<li>M-g g &lt;nr&gt; RET
+     flytter markøren til linjenummer &lt;nr&gt;
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

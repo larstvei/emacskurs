@@ -1,0 +1,268 @@
+* Emacskurs
+** Intro
+*** Hva er Emacs?
+    
+    - Teksteditor
+    - Utvidbar (Elisp)
+    - Over 30 år gammel
+    - Over 2500 innebygde kommandoer
+    - Fri programvare
+
+*** Buffere, vinduer og rammer
+
+    - Tekst vises i buffere
+    - Du kan ha så mange åpene buffere du vil
+    - En fil åpnes i et nytt buffer
+    - Minibufferet (nederste linje), brukes til å skrive inn filnavn,
+      buffernavn, etc...
+
+    - Emacs åpnes i en ramme
+    - En kan ha flere vinduer i samme ramme
+
+*** Modes
+
+    - Major modes
+      - hvert buffer har kun én aktiv major mode
+      - en major mode gir deg funksjonalitet for en bestemt type
+        tekstredigering
+      - de fleste programmeringsspråk har sin egen major mode
+
+    - Minor modes
+      - du kan ha så mange aktive minor modes du ønsker
+      - en minor mode tilbyr tilleggsfunksjonalitet
+
+    Modes tilføyer ofte egne tastekombinasjoner!
+
+*** Tips
+
+    Emacs er annerledes å bruke enn mange andre programmer, så det
+    krever tilvenning.
+
+    - i begynnelsen
+      - les og gjør «learn-by-doing tutorial» (C-h t)
+      - tving deg selv til å bruke de kommandoene du lærer til de
+        sitter i fingrene
+      - unngå «pek og klikk»
+
+    - etter hvert (for spesielt interesserte)
+      - skriv din egen configfil
+      - lær litt elisp, og skriv dine egne funksjoner
+
+    - annet
+      - gjør CAPS-LOCK om til en ekstra Control (Ctrl)
+
+** Taster
+*** Terminologi for taster
+
+     - C-<any>
+       Control
+
+     - M-<any>
+       Meta er Alt på de fleste maskiner (alternativt ESC)
+
+    <any> betyr et vilkårlig tegn (eller tastekombinasjon)
+
+*** Prefikstaster
+
+     - C-x <any>
+       prefiks for globale kommandoer
+
+     - C-c <any>
+       prefiks for lokale kommandoer
+       (har ikke alltid samme funksjon!)
+
+     - C-h <any>
+       prefiks for hjelp
+
+    Alle tastekombinasjon som ikke er en prefiks er bundet til en
+    kommando!
+
+** Komme seg ut
+
+   - C-x C-c
+     avslutt emacs
+
+   - C-g
+     avbryt
+     (bruk hvis du ikke skjønner hva emacs holder på med!)
+
+   - ESC ESC ESC
+     (bruk hvis C-g ikke hjalp)
+
+   - C-<prefix> C-g
+     er udefinert
+     (Dvs. C-g kan brukes til å avbryte prefiks)
+
+** Tekstredigering
+*** Flytte markør
+
+    - C-f, C-b
+      flytt markøren ett tegn frem/tilbake
+
+    - M-f, M-b
+      flytt markøren ett ord frem/tilbake
+
+    - C-a, C-e
+      flytt markøren til begynnelsen/slutten av linja
+
+    - C-p, C-n
+      flytt markøren til forrige/neste linje
+
+*** Bla rundt
+
+    - C-v, M-v
+      scroll ned/opp en side
+
+    - M-<, M->
+      gå til begynnelsen/slutten av bufferet
+
+    - C-l
+      vis slik at markøren er i senter/toppen/bunnen
+
+*** Kill og yank
+
+    - C-w
+      kill, tilsvarer cut
+      
+    - C-y
+      yank, tilsvarer paste
+
+    - M-w
+      lagre til kill-ring, tilsvarer copy
+
+    - C-k
+      kill, drepe resten av en linje
+
+    - M-y, må etterfølges av C-y
+      yank-pop, går lenger tilbake på kill-ring
+
+*** Feiloppretting
+
+    - C-d, M-d
+      fjern neste bokstav/ord
+
+    - C-_
+      undo! 
+
+    - C-t, M-t
+      bytt om to bokstaver/ord
+
+    - C-x C-t
+      bytt om to linjer
+
+    - M-q
+      plasserer om tekst i en paragraf slik at linjene ikke overstiger
+      70 tegn (den ødelegger ikke syntaks i programmeringsmodes)
+
+    - M-u, M-l, M-c
+      gjør neste ord til UPPERCASE/lowercase/Capital-Case
+      
+*** Markering av tekst
+
+    - C-SPC
+      marker tekst
+
+    - C-x h
+      marker all tekst
+
+    Bruk i kombinasjon med M-w, C-w og TAB
+
+** Filer, vinduer og buffere
+*** Filer
+    
+    - C-x C-f
+      åpne fil
+      (hvis den ikke finnes fra før opprettes den)
+
+    - C-x C-s
+      lagre buffer
+
+    - C-x C-w
+      skrive til fil (tilsvarende «lagre som...»)
+
+*** Vinduer
+
+    - C-x 2, C-x 3
+      splitt et vindu vertikalt/horisontalt
+
+    - C-x 1
+      gjør det aktive vinduet til det eneste vinduet
+
+    - C-x 0
+      lukk det aktive vinduet
+
+    - C-x o
+      bytt fokus til et annet vindu
+
+*** Buffere
+
+    - C-x b RET
+      bytt buffer
+      (siste besøkte buffer er default)
+
+    - C-x k RET
+      drep (kill) buffer
+      (det aktive bufferet er default)
+
+    - C-x left, C-x right
+      en annen måte å bytter buffer
+
+** Kommandoer
+
+   - M-x function RET
+     lar deg kalle en hvilken som helst kommando med navn
+
+   - M-x replace-string RET erstatt RET med RET
+     tilsvarer «search and replace»
+
+   - M-x query-replace RET erstatt RET med RET ... y/n
+     samme som replace-string, men du kan velge hva som skal
+     erstattes
+
+   Bruk TAB for autocomplete!
+     
+** Søking
+
+   - C-s
+     søk fremover i bufferet
+
+   - C-r
+     søk bakover i bufferet
+
+   Dette er en effektiv måte å flytte markøren!
+
+** Hjelp til selvhjelp
+
+   - C-h k
+     bruk hvis du lurer på hva en tastekombinasjon gjør
+
+   - C-h f
+     bruk hvis du kjenner navnet på en funksjon, men ikke vet hva hva
+     den gjør
+
+   - C-h m
+     gir deg informasjon om moden du er i
+     (bl.a tastekombinasjoner som er spesielle for moden)
+
+   - C-h a
+     apropos, lar deg søke i hjelpen
+
+   - C-h C-h, C-h ?
+     gir deg hjelp om hjelpen
+
+** Programmering
+   
+   - TAB indenterer riktig 
+     (dersom indenteringen er gal er det et tegn på at det er noe galt
+     i koden!)
+
+   - M-;
+     kommenterer ut et markert område
+
+   - M-x compile RET compile-command RET
+     lar deg kompilere i Emacs
+     (gir trykkbare linker til der feil oppstod)
+
+   - M-g g <nr> RET
+     flytter markøren til linjenummer <nr>
+
