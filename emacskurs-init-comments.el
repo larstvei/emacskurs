@@ -1,39 +1,42 @@
+;; we can require features
+
+
+
+;; add mirrors for list-packages
+
+
+;; needed to use downloaded packages
+
+
+;; install some packages if missing
+;; (auto-complete ido-vertical-mode monokai-theme multiple-cursors undo-tree)
+
+
 ;; no splash screen
 
 
 ;; show matching parenthesis
 
 
-;; answer with y/n
-
-
-;; stop blinking cursor
+;; show column number in mode-line
 
 
 ;; overwrite marked text
 
 
-;; show column number in mode-line
+;; enable ido-mode, changes the way files are selected in the minibuffer
 
 
-;; needed to use things downloaded with the package manager
+;; use ido everywhere
 
 
-;; add mirrors for list-packages
+;; show vertically
 
 
-;; choose a color-theme (downloaded with package-manager)
+;; use undo-tree-mode globally
 
 
-;; get the default config for auto-complete (downloaded with
-;; package-manager)
-
-
-;; load the default config of auto-complete
-
-
-;; enable ido-mode, this changes the way files are selected in the
-;; minibuffer
+;; stop blinking cursor
 
 
 ;; no menubar
@@ -49,11 +52,25 @@
 ;; with 1 to enable this feature
 
 
+;; answer with y/n
+
+
+;; choose a color-theme
+
+
+;; get the default config for auto-complete (downloaded with
+;; package-manager)
+
+
+;; load the default config of auto-complete
+
+
 ;; kills the active buffer, not asking what buffer to kill.
 
 
 ;; adds all autosave-files (i.e #test.txt#, test.txt~) in one
 ;; directory, avoid clutter in filesystem.
+
 
 
 ;; defining a function that sets more accessible keyboard-bindings to
@@ -86,3 +103,4 @@
 
 
 ;; bindes the tidy-function to C-TAB
+

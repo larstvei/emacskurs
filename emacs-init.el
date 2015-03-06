@@ -1,42 +1,53 @@
-;; no splash screen
-(setq inhibit-splash-screen t)
+;; we can require features
+(require 'cl)
+(require 'package)
 
-;; show matching parenthesis
-(show-paren-mode t)
-
-;; answer with y/n
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; stop blinking cursor
-(blink-cursor-mode 0)
-
-;; overwrite marked text
-(delete-selection-mode t)
-
-;; show column number in mode-line
-(column-number-mode t)
+;; add mirrors for list-packages
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 ;; needed to use things downloaded with the package manager
 (package-initialize)
 
-;; add mirrors for list-packages
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+;; install some packages if missing
+(let* ((packages '(auto-complete
+                   ido-vertical-mode
+                   monokai-theme
+                   multiple-cursors
+                   undo-tree
+                   ;; if you want more packages, add them here
+                   ))
+       (packages (remove-if 'package-installed-p packages)))
+  (when packages
+    (package-refresh-contents)
+    (mapc 'package-install packages)))
 
-;; choose a color-theme 
-(load-theme 'wombat t)
+;; no splash screen
+(setq inhibit-splash-screen t)
 
-;; get the default config for auto-complete (downloaded with
-;; package-manager)
-(require 'auto-complete-config)
+;; show matching parenthesis
+(show-paren-mode 1)
 
-;; load the default config of auto-complete
-(ac-config-default)
+;; show column number in mode-line
+(column-number-mode 1)
 
-;; enable ido-mode, this changes the way files are selected in the
-;; minibuffer
-(ido-mode t)
+;; overwrite marked text
+(delete-selection-mode 1)
+
+;; changes selection in the minibuffer
+(ido-mode 1)
+
+;; use ido everywhere
+(ido-everywhere 1)
+
+;; show vertically
+(ido-vertical-mode 1)
+
+;; use undo-tree-mode globally
+(global-undo-tree-mode 1)
+
+;; stop blinking cursor
+(blink-cursor-mode 0)
 
 ;; no menubar
 (menu-bar-mode 0)
@@ -51,12 +62,25 @@
 ;; with 1 to enable this feature
 (global-linum-mode 0)
 
+;; answer with y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; choose a color-theme
+(load-theme 'monokai t)
+
+;; get the default config for auto-complete (downloaded with
+;; package-manager)
+(require 'auto-complete-config)
+
+;; load the default config of auto-complete
+(ac-config-default)
+
 ;; kills the active buffer, not asking what buffer to kill.
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 ;; adds all autosave-files (i.e #test.txt#, test.txt~) in one
 ;; directory, avoid clutter in filesystem.
-(defvar emacs-autosave-directory "~/.emacs.d/autosaves/")
+(defvar emacs-autosave-directory (concat user-emacs-directory "autosaves/"))
 (setq backup-directory-alist
       `((".*" . ,emacs-autosave-directory))
       auto-save-file-name-transforms
@@ -65,14 +89,12 @@
 ;; defining a function that sets more accessible keyboard-bindings to
 ;; hiding/showing code-blocs
 (defun hideshow-on ()
+  (interactive)
+  (local-set-key (kbd "<backtab>")   'hs-toggle-hiding)
   (local-set-key (kbd "C-c <right>") 'hs-show-block)
-  (local-set-key (kbd "C-c C-<right>") 'hs-show-block)
   (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-  (local-set-key (kbd "C-c C-<left>")  'hs-hide-block)
   (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-  (local-set-key (kbd "C-c C-<up>")    'hs-hide-all)
   (local-set-key (kbd "C-c <down>")  'hs-show-all)
-  (local-set-key (kbd "C-c C-<down>")  'hs-show-all)
   (hs-minor-mode t))
 
 ;; now we have to tell emacs where to load these functions. Showing
@@ -110,10 +132,10 @@
   "Ident, untabify and unwhitespacify current buffer, or region if active."
   (interactive)
   (let ((beg (if (region-active-p) (region-beginning) (point-min)))
-	(end (if (region-active-p) (region-end)       (point-max))))
+        (end (if (region-active-p) (region-end)       (point-max))))
     (whitespace-cleanup)
     (indent-region beg end nil)
-    (untabify beg end)))
 
+    (untabify beg end)))
 ;; bindes the tidy-function to C-TAB
 (global-set-key (kbd "<C-tab>") 'tidy)

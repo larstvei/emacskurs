@@ -1,763 +1,706 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>emacskurs</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="emacskurs"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-01 03:06:33 CEST"/>
-<meta name="author" content="Lars Tveito"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><!-- configuration parameters -->
-<meta name="defaultView" content="slideshow" />
-<meta name="controlVis" content="hidden" />
-<!-- style sheet links -->
-<link rel="stylesheet" href="ui/railscast/slides.css" type="text/css" media="projection" id="slideProj" />
-<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
-<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
-<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
-<!-- S5 JS -->
-<script src="ui/default/slides.js" type="text/javascript"></script>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
+<meta charset="utf-8"/>
+<title>Emacskurs</title>
+<meta name="author" content="(Lars Tveito)"/>
 
+<link rel="stylesheet" href="./reveal.js/css/reveal.min.css"/>
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
-<div class="layout">
-<div id="controls"><!-- no edit --></div>
-<div id="currentSlide"><!-- no edit --></div>
-<div id="header"></div>
-<div id="footer">
-<h1>Lars Tveito - emacskurs</h1>
-</div>
-</div>
-
-<div class="presentation">
-<div class="slide">
-<h1>emacskurs</h1>
-<h1>Lars Tveito</h1>
-<h1>2013-08-01</h1>
-</div>
-<h1 class="title">emacskurs</h1>
-
-
-<div id="table-of-contents" class="slide">
-<h1>Table of Contents</h1>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Emacskurs</a>
-<ul>
-<li><a href="#sec-1-1">1.1 Intro</a>
-<ul>
-<li><a href="#sec-1-1-1">1.1.1 Hva er Emacs?</a></li>
-<li><a href="#sec-1-1-2">1.1.2 Buffere, vinduer og rammer</a></li>
-<li><a href="#sec-1-1-3">1.1.3 Modes</a></li>
-<li><a href="#sec-1-1-4">1.1.4 Tips</a></li>
-</ul>
+<div class="reveal">
+<div class="slides">
+<section>
+<h1>Emacskurs</h1>
+<h2>Lars Tveito</h2>
+<h2><a href="mailto:larstvei@ifi.uio.no">larstvei@ifi.uio.no</a></h2>
+<h2></h2></section>
+<section>
+<h2>Table of Contents</h2><ul>
+<li>
+<a href="#sec-1">Intro</a>
 </li>
-<li><a href="#sec-1-2">1.2 Taster</a>
-<ul>
-<li><a href="#sec-1-2-1">1.2.1 Terminologi for taster</a></li>
-<li><a href="#sec-1-2-2">1.2.2 Prefikstaster</a></li>
-</ul>
+<li>
+<a href="#sec-2">Taster</a>
 </li>
-<li><a href="#sec-1-3">1.3 Komme seg ut</a></li>
-<li><a href="#sec-1-4">1.4 Tekstredigering</a>
-<ul>
-<li><a href="#sec-1-4-1">1.4.1 Flytte markør</a></li>
-<li><a href="#sec-1-4-2">1.4.2 Bla rundt</a></li>
-<li><a href="#sec-1-4-3">1.4.3 Kill og yank</a></li>
-<li><a href="#sec-1-4-4">1.4.4 Feiloppretting</a></li>
-<li><a href="#sec-1-4-5">1.4.5 Markering av tekst</a></li>
-</ul>
+<li>
+<a href="#sec-3">Filer, vinduer og buffere</a>
 </li>
-<li><a href="#sec-1-5">1.5 Filer, vinduer og buffere</a>
-<ul>
-<li><a href="#sec-1-5-1">1.5.1 Filer</a></li>
-<li><a href="#sec-1-5-2">1.5.2 Vinduer</a></li>
-<li><a href="#sec-1-5-3">1.5.3 Buffere</a></li>
-</ul>
+<li>
+<a href="#sec-4">Kommandoer</a>
 </li>
-<li><a href="#sec-1-6">1.6 Kommandoer</a></li>
-<li><a href="#sec-1-7">1.7 Søking</a></li>
-<li><a href="#sec-1-8">1.8 Hjelp til selvhjelp</a></li>
-<li><a href="#sec-1-9">1.9 Programmering</a></li>
-</ul>
+<li>
+<a href="#sec-5">SÃ¸king</a>
+</li>
+<li>
+<a href="#sec-6">Hjelp til selvhjelp</a>
+</li>
+<li>
+<a href="#sec-7">Programmering</a>
+</li>
+<li>
+<a href="#sec-8">Makroer</a>
+</li>
+<li>
+<a href="#sec-9">Pakker</a>
+</li>
+<li>
+<a href="#sec-10">Til slutt</a>
 </li>
 </ul>
-</div>
-</div>
+</section>
 
-<div id="outline-container-1" class="outline-1 slide">
-<h1 id="sec-1"><span class="section-number-1">1</span> Emacskurs</h1>
-<div class="outline-text-1" id="text-1">
+<section>
+<section id="sec-1" >
 
+<h2>Intro</h2>
+</section>
+<section id="sec-1-1" >
 
-</div>
-
-<div id="outline-container-1-1" class="outline-2">
-<h2 id="sec-1-1"><span class="section-number-2">1.1</span> Intro</h2>
-<div class="outline-text-2" id="text-1-1">
-
-
-</div>
-
-<div id="outline-container-1-1-1" class="outline-3">
-<h3 id="sec-1-1-1"><span class="section-number-3">1.1.1</span> Hva er Emacs?</h3>
-<div class="outline-text-3" id="text-1-1-1">
-
-
-<ul>
-<li>Teksteditor
+<h3>Plan for kurset</h3>
+<ul class="org-ul">
+<li class="fragment roll-in">FÃ¸r pause:<br  />
+<ul class="org-ul">
+<li>InnfÃ¸ring i Emacs<br  />
 </li>
-<li>Utvidbar (Elisp)
+<li>Nyttige kommander<br  />
 </li>
-<li>Over 30 år gammel
+</ul>
 </li>
-<li>Over 2500 innebygde kommandoer
+
+<li class="fragment roll-in">Etter pause:<br  />
+<ul class="org-ul">
+<li>Sette opp Emacs pÃ¥ Ifi's maskiner<br  />
 </li>
-<li>Fri programvare
+<li>Skrive en enkel konfigurasjonsfil<br  />
+</li>
+<li>Bruke det vi lÃ¦rte fÃ¸r pause<br  />
+</li>
+</ul>
 </li>
 </ul>
 
+</section>
+<section id="sec-1-2" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-1-2" class="outline-3">
-<h3 id="sec-1-1-2"><span class="section-number-3">1.1.2</span> Buffere, vinduer og rammer</h3>
-<div class="outline-text-3" id="text-1-1-2">
-
-
-<ul>
-<li>Tekst vises i buffere
+<h3>Hva er Emacs?</h3>
+<ul class="org-ul">
+<li class="fragment roll-in">Teksteditor<br  />
 </li>
-<li>Du kan ha så mange åpene buffere du vil
+<li class="fragment roll-in">Utvidbar (Emacs Lisp)<br  />
 </li>
-<li>En fil åpnes i et nytt buffer
+<li class="fragment roll-in">Over 30 Ã¥r gammel<br  />
 </li>
-<li>Minibufferet (nederste linje), brukes til å skrive inn filnavn,
-      buffernavn, etc&hellip;
-
+<li class="fragment roll-in">Over 2500 innebygde kommandoer<br  />
 </li>
-<li>Emacs åpnes i en ramme
-</li>
-<li>En kan ha flere vinduer i samme ramme
+<li class="fragment roll-in">Fri programvare<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-1-3" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-1-3" class="outline-3">
-<h3 id="sec-1-1-3"><span class="section-number-3">1.1.3</span> Modes</h3>
-<div class="outline-text-3" id="text-1-1-3">
-
-
-<ul>
-<li>Major modes
-<ul>
-<li>hvert buffer har kun én aktiv major mode
+<h3>Rammer, vinduer og buffere</h3>
+<ul class="org-ul">
+<li class="fragment roll-in">Emacs Ã¥pnes i en ramme<br  />
 </li>
-<li>en major mode gir deg funksjonalitet for en bestemt type
-        tekstredigering
+<li class="fragment roll-in">Man kan ha flere vinduer i samme ramme<br  />
 </li>
-<li>de fleste programmeringsspråk har sin egen major mode
-
+<li class="fragment roll-in">Tekst vises i buffere<br  />
+</li>
+<li class="fragment roll-in">Du kan ha sÃ¥ mange Ã¥pne buffere du vil<br  />
+</li>
+<li class="fragment roll-in">En fil Ã¥pnes i et nytt buffer<br  />
+</li>
+<li class="fragment roll-in">Minibufferet (nederste linje), brukes til Ã¥ skrive inn filnavn, buffernavn, etc&#x2026;<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-1-4" >
+
+<h3>Modes</h3>
+<ul class="org-ul">
+<li class="fragment roll-in">Major modes<br  />
+<ul class="org-ul">
+<li>hvert buffer har kun Ã©n aktiv major mode<br  />
 </li>
-<li>Minor modes
-<ul>
-<li>du kan ha så mange aktive minor modes du ønsker
+<li>en major mode gir deg funksjonalitet for en bestemt type<br  />
+tekstredigering<br  />
 </li>
-<li>en minor mode tilbyr tilleggsfunksjonalitet
+<li>de fleste programmeringssprÃ¥k har sin egen major mode<br  />
+</li>
+</ul>
+</li>
+
+<li class="fragment roll-in">Minor modes<br  />
+<ul class="org-ul">
+<li>du kan ha sÃ¥ mange aktive minor modes du Ã¸nsker<br  />
+</li>
+<li>en minor mode tilbyr tilleggsfunksjonalitet<br  />
+</li>
+</ul>
+</li>
+
+<li class="fragment roll-in">Modes tilfÃ¸yer ofte egne tastekombinasjoner!<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-1-5" >
+
+<h3>Tips</h3>
+<ul class="org-ul">
+<li>Emacs er annerledes Ã¥ bruke enn mange andre programmer, sÃ¥ det krever tilvenning.<br  />
 </li>
 </ul>
 
-
-<p>
-    Modes tilføyer ofte egne tastekombinasjoner!
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-1-4" class="outline-3">
-<h3 id="sec-1-1-4"><span class="section-number-3">1.1.4</span> Tips</h3>
-<div class="outline-text-3" id="text-1-1-4">
-
-
-<p>
-    Emacs er annerledes å bruke enn mange andre programmer, så det
-    krever tilvenning.
-</p>
-<ul>
-<li>i begynnelsen
-<ul>
-<li>les og gjør «learn-by-doing tutorial» (C-h t)
+<ul class="org-ul">
+<li class="fragment roll-in">i begynnelsen:<br  />
+<ul class="org-ul">
+<li>les og gjÃ¸r Â«learn-by-doing tutorialÂ» (<code>C-h t</code>)<br  />
 </li>
-<li>tving deg selv til å bruke de kommandoene du lærer til de
-        sitter i fingrene
+<li>tving deg selv til Ã¥ bruke de kommandoene du lÃ¦rer til de sitter i fingrene<br  />
 </li>
-<li>unngå «pek og klikk»
+<li>unngÃ¥ Â«pek og klikkÂ»<br  />
+</li>
+</ul>
+</li>
 
+<li class="fragment roll-in">etter hvert (for spesielt interesserte):<br  />
+<ul class="org-ul">
+<li>skriv din egen config-fil<br  />
+</li>
+<li>lÃ¦r litt Emacs lisp, og skriv dine egne funksjoner<br  />
+</li>
+</ul>
+</li>
+
+<li class="fragment roll-in">annet:<br  />
+<ul class="org-ul">
+<li>gjÃ¸r <code>CAPS-LOCK</code> om til en ekstra Control (<code>Ctrl</code>)<br  />
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-2" >
+
+<h2>Taster</h2>
+</section>
+<section id="sec-2-1" >
+
+<h3>Terminologi for taster</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-&lt;any&gt;</code><br  />
+      Control<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-&lt;any&gt;</code><br  />
+      Meta er <code>Alt</code> pÃ¥ de fleste maskiner (alternativt <code>ESC</code>)<br  />
+</li>
+
+<li class="fragment roll-in"><code>&lt;any&gt;</code> betyr et vilkÃ¥rlig tegn (eller tastekombinasjon)<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-2" >
+
+<h3>Prefikstaster</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-x &lt;any&gt;</code><br  />
+      prefiks for globale kommandoer<br  />
 </li>
-<li>etter hvert (for spesielt interesserte)
-<ul>
-<li>skriv din egen configfil
+
+<li class="fragment roll-in"><code>C-c &lt;any&gt;</code><br  />
+prefiks for lokale kommandoer<br  />
+(har ikke alltid samme funksjon!)<br  />
 </li>
-<li>lær litt elisp, og skriv dine egne funksjoner
 
+<li class="fragment roll-in"><code>C-h &lt;any&gt;</code><br  />
+      prefiks for hjelp<br  />
 </li>
-</ul>
 
-</li>
-<li>annet
-<ul>
-<li>gjør CAPS-LOCK om til en ekstra Control (Ctrl)
-</li>
-</ul>
-
-</li>
-</ul>
-
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-1-2" class="outline-2">
-<h2 id="sec-1-2"><span class="section-number-2">1.2</span> Taster</h2>
-<div class="outline-text-2" id="text-1-2">
-
-
-</div>
-
-<div id="outline-container-1-2-1" class="outline-3">
-<h3 id="sec-1-2-1"><span class="section-number-3">1.2.1</span> Terminologi for taster</h3>
-<div class="outline-text-3" id="text-1-2-1">
-
-
-<ul>
-<li>C-&lt;any&gt;
-       Control
-
-</li>
-<li>M-&lt;any&gt;
-       Meta er Alt på de fleste maskiner (alternativt ESC)
+<li class="fragment roll-in">Alle tastekombinasjoner som ikke er en prefiks er bundet til en kommando!<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-3" >
 
-<p>
-    &lt;any&gt; betyr et vilkårlig tegn (eller tastekombinasjon)
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-2-2" class="outline-3">
-<h3 id="sec-1-2-2"><span class="section-number-3">1.2.2</span> Prefikstaster</h3>
-<div class="outline-text-3" id="text-1-2-2">
-
-
-<ul>
-<li>C-x &lt;any&gt;
-       prefiks for globale kommandoer
-
+<h3>Komme seg ut</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-x C-c</code><br  />
+      avslutt Emacs<br  />
 </li>
-<li>C-c &lt;any&gt;
-       prefiks for lokale kommandoer
-       (har ikke alltid samme funksjon!)
 
+<li class="fragment roll-in"><code>C-g</code><br  />
+avbryt<br  />
+(bruk hvis du ikke skjÃ¸nner hva Emacs holder pÃ¥ med!)<br  />
 </li>
-<li>C-h &lt;any&gt;
-       prefiks for hjelp
+
+<li class="fragment roll-in"><code>ESC ESC ESC</code><br  />
+      (bruk hvis <code>C-g</code> ikke hjalp)<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-&lt;prefix&gt; C-g</code><br  />
+er udefinert<br  />
+(Dvs. <code>C-g</code> kan brukes til Ã¥ avbryte prefiks)<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-4" >
 
-<p>
-    Alle tastekombinasjon som ikke er en prefiks er bundet til en
-    kommando!
-</p>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-1-3" class="outline-2">
-<h2 id="sec-1-3"><span class="section-number-2">1.3</span> Komme seg ut</h2>
-<div class="outline-text-2" id="text-1-3">
-
-
-<ul>
-<li>C-x C-c
-     avslutt emacs
-
+<h3>Tekstredigering</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-f</code>, <code>C-b</code><br  />
+      flytt markÃ¸ren ett tegn frem/tilbake<br  />
 </li>
-<li>C-g
-     avbryt
-     (bruk hvis du ikke skjønner hva emacs holder på med!)
 
+<li class="fragment roll-in"><code>M-f</code>, <code>M-b</code><br  />
+      flytt markÃ¸ren ett ord frem/tilbake<br  />
 </li>
-<li>ESC ESC ESC
-     (bruk hvis C-g ikke hjalp)
 
+<li class="fragment roll-in"><code>C-a</code>, <code>C-e</code><br  />
+      flytt markÃ¸ren til begynnelsen/slutten av linja<br  />
 </li>
-<li>C-&lt;prefix&gt; C-g
-     er udefinert
-     (Dvs. C-g kan brukes til å avbryte prefiks)
+
+<li class="fragment roll-in"><code>C-p</code>, <code>C-n</code><br  />
+      flytt markÃ¸ren til forrige/neste linje<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-5" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-4" class="outline-2">
-<h2 id="sec-1-4"><span class="section-number-2">1.4</span> Tekstredigering</h2>
-<div class="outline-text-2" id="text-1-4">
-
-
-</div>
-
-<div id="outline-container-1-4-1" class="outline-3">
-<h3 id="sec-1-4-1"><span class="section-number-3">1.4.1</span> Flytte markør</h3>
-<div class="outline-text-3" id="text-1-4-1">
-
-
-<ul>
-<li>C-f, C-b
-      flytt markøren ett tegn frem/tilbake
-
+<h3>Bla rundt</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-v</code>, <code>M-v</code><br  />
+     scroll ned/opp en side<br  />
 </li>
-<li>M-f, M-b
-      flytt markøren ett ord frem/tilbake
 
+<li class="fragment roll-in"><code>M-&lt;</code>, <code>M-&gt;</code><br  />
+     gÃ¥ til begynnelsen/slutten av bufferet<br  />
 </li>
-<li>C-a, C-e
-      flytt markøren til begynnelsen/slutten av linja
 
-</li>
-<li>C-p, C-n
-      flytt markøren til forrige/neste linje
+<li class="fragment roll-in"><code>C-l</code><br  />
+     vis slik at markÃ¸ren er i senter/toppen/bunnen<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-6" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-4-2" class="outline-3">
-<h3 id="sec-1-4-2"><span class="section-number-3">1.4.2</span> Bla rundt</h3>
-<div class="outline-text-3" id="text-1-4-2">
-
-
-<ul>
-<li>C-v, M-v
-      scroll ned/opp en side
-
+<h3>Kill og yank</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-w</code><br  />
+     kill, tilsvarer cut<br  />
 </li>
-<li>M-&lt;, M-&gt;
-      gå til begynnelsen/slutten av bufferet
 
+<li class="fragment roll-in"><code>C-y</code><br  />
+     yank, tilsvarer paste<br  />
 </li>
-<li>C-l
-      vis slik at markøren er i senter/toppen/bunnen
+
+<li class="fragment roll-in"><code>M-w</code><br  />
+     lagre til kill-ring, tilsvarer copy<br  />
 </li>
-</ul>
 
-
-</div>
-
-</div>
-
-<div id="outline-container-1-4-3" class="outline-3">
-<h3 id="sec-1-4-3"><span class="section-number-3">1.4.3</span> Kill og yank</h3>
-<div class="outline-text-3" id="text-1-4-3">
-
-
-<ul>
-<li>C-w
-      kill, tilsvarer cut
-
+<li class="fragment roll-in"><code>C-k</code><br  />
+     kill, drepe resten av en linje<br  />
 </li>
-<li>C-y
-      yank, tilsvarer paste
 
-</li>
-<li>M-w
-      lagre til kill-ring, tilsvarer copy
-
-</li>
-<li>C-k
-      kill, drepe resten av en linje
-
-</li>
-<li>M-y, må etterfølges av C-y
-      yank-pop, går lenger tilbake på kill-ring
+<li class="fragment roll-in"><code>M-y</code>, mÃ¥ etterfÃ¸lges av <code>C-y</code><br  />
+     yank-pop, gÃ¥r lenger tilbake pÃ¥ kill-ring<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-7" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-4-4" class="outline-3">
-<h3 id="sec-1-4-4"><span class="section-number-3">1.4.4</span> Feiloppretting</h3>
-<div class="outline-text-3" id="text-1-4-4">
-
-
-<ul>
-<li>C-d, M-d
-      fjern neste bokstav/ord
-
+<h3>Feiloppretting</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-d</code>, <code>M-d</code><br  />
+     fjern neste bokstav/ord<br  />
 </li>
-<li>C-_
-      undo! 
 
+<li class="fragment roll-in"><code>C-_</code>, <code>C-/</code>, <code>C-x u</code><br  />
+     undo!<br  />
 </li>
-<li>C-t, M-t
-      bytt om to bokstaver/ord
 
+<li class="fragment roll-in"><code>C-t</code>, <code>M-t</code><br  />
+     bytt om to bokstaver/ord<br  />
 </li>
-<li>C-x C-t
-      bytt om to linjer
 
+<li class="fragment roll-in"><code>C-x C-t</code><br  />
+     bytt om to linjer<br  />
 </li>
-<li>M-q
-      plasserer om tekst i en paragraf slik at linjene ikke overstiger
-      70 tegn (den ødelegger ikke syntaks i programmeringsmodes)
 
+<li class="fragment roll-in"><code>M-q</code><br  />
+     plasserer om tekst i en paragraf slik at linjene ikke overstiger 70 tegn (den Ã¸delegger ikke syntaks i programmeringmodes)<br  />
 </li>
-<li>M-u, M-l, M-c
-      gjør neste ord til UPPERCASE/lowercase/Capital-Case
+
+<li class="fragment roll-in"><code>M-u</code>, <code>M-l</code>, <code>M-c</code><br  />
+     gjÃ¸r neste ord til UPPERCASE/lowercase/Capital-Case<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-2-8" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-4-5" class="outline-3">
-<h3 id="sec-1-4-5"><span class="section-number-3">1.4.5</span> Markering av tekst</h3>
-<div class="outline-text-3" id="text-1-4-5">
-
-
-<ul>
-<li>C-SPC
-      marker tekst
-
+<h3>Markering av tekst</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-SPC</code><br  />
+     markerer tekst<br  />
 </li>
-<li>C-x h
-      marker all tekst
+
+<li class="fragment roll-in"><code>C-x h</code><br  />
+     markerer all tekst<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-h</code><br  />
+     markerer en paragraf<br  />
+</li>
+
+<li class="fragment roll-in">Bruk i kombinasjon med <code>M-w</code>, <code>C-w</code> og <code>TAB</code><br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-3" >
+
+<h2>Filer, vinduer og buffere</h2>
+</section>
+<section id="sec-3-1" >
+
+<h3>Filer</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-x C-f</code><br  />
+Ã¥pne fil<br  />
+(hvis den ikke finnes fra fÃ¸r Ã¥pnes et tomt buffer med det nye filnavnet)<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-x C-s</code><br  />
+     lagre buffer<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-x C-w</code><br  />
+     skrive til fil (tilsvarende Â«lagre som&#x2026;Â»)<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-3-2" >
 
-<p>
-    Bruk i kombinasjon med M-w, C-w og TAB
-</p>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-1-5" class="outline-2">
-<h2 id="sec-1-5"><span class="section-number-2">1.5</span> Filer, vinduer og buffere</h2>
-<div class="outline-text-2" id="text-1-5">
-
-
-</div>
-
-<div id="outline-container-1-5-1" class="outline-3">
-<h3 id="sec-1-5-1"><span class="section-number-3">1.5.1</span> Filer</h3>
-<div class="outline-text-3" id="text-1-5-1">
-
-
-<ul>
-<li>C-x C-f
-      åpne fil
-      (hvis den ikke finnes fra før opprettes den)
-
+<h3>Vinduer</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-x 2</code>, <code>C-x 3</code><br  />
+     splitt et vindu horisontalt/vertikalt<br  />
 </li>
-<li>C-x C-s
-      lagre buffer
 
+<li class="fragment roll-in"><code>C-x 1</code><br  />
+     gjÃ¸r det aktive vinduet til det eneste vinduet<br  />
 </li>
-<li>C-x C-w
-      skrive til fil (tilsvarende «lagre som&hellip;»)
+
+<li class="fragment roll-in"><code>C-x 0</code><br  />
+     lukk det aktive vinduet<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-x o</code><br  />
+     bytt fokus til et annet vindu<br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-3-3" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-5-2" class="outline-3">
-<h3 id="sec-1-5-2"><span class="section-number-3">1.5.2</span> Vinduer</h3>
-<div class="outline-text-3" id="text-1-5-2">
-
-
-<ul>
-<li>C-x 2, C-x 3
-      splitt et vindu vertikalt/horisontalt
-
+<h3>Buffere</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-x b RET</code><br  />
+bytt buffer<br  />
+(siste besÃ¸kte buffer er default)<br  />
 </li>
-<li>C-x 1
-      gjør det aktive vinduet til det eneste vinduet
 
+<li class="fragment roll-in"><code>C-x k RET</code><br  />
+drep (kill) buffer<br  />
+(det aktive bufferet er default)<br  />
 </li>
-<li>C-x 0
-      lukk det aktive vinduet
 
+<li class="fragment roll-in"><code>C-x left</code>, <code>C-x right</code><br  />
+     en annen mÃ¥te Ã¥ bytter buffer pÃ¥<br  />
 </li>
-<li>C-x o
-      bytt fokus til et annet vindu
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-4" >
+
+<h2>Kommandoer</h2>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>M-x function RET</code><br  />
+    lar deg kalle en vilkÃ¥rlig kommando med navn<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-x replace-string RET erstatt RET med RET</code><br  />
+    tilsvarer Â«search and replaceÂ»<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-x query-replace RET erstatt RET med RET</code> &#x2026; <code>y/n</code><br  />
+    samme som replace-string, men du kan velge hva som skal erstattes (kan ogsÃ¥ kjÃ¸res med <code>M-%</code>!)<br  />
+</li>
+
+<li class="fragment roll-in">Bruk <code>TAB</code> for autocomplete!<br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-5" >
+
+<h2>SÃ¸king</h2>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-s</code><br  />
+    sÃ¸k fremover i bufferet<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-r</code><br  />
+    sÃ¸k bakover i bufferet<br  />
+</li>
+
+<li class="fragment roll-in">Dette er en <i>svÃ¦rt</i> effektiv mÃ¥te Ã¥ flytte markÃ¸ren pÃ¥!<br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-6" >
+
+<h2>Hjelp til selvhjelp</h2>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>C-h k</code><br  />
+    bruk hvis du lurer pÃ¥ hva en tastekombinasjon gjÃ¸r<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-h f</code><br  />
+    bruk hvis du kjenner navnet pÃ¥ en funksjon, men ikke vet hva den gjÃ¸r<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-h m</code><br  />
+    gir deg informasjon om moden du er i (bl.a. tastekombinasjoner som er spesielle for moden)<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-h a</code><br  />
+    apropos, lar deg sÃ¸ke i hjelpen<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-h C-h</code> (eller: <code>C-h ?</code>)<br  />
+gir deg hjelp om hjelpen<br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-7" >
+
+<h2>Programmering</h2>
+<ul class="org-ul">
+<li class="fragment roll-in"><code>TAB</code><br  />
+    indenterer riktig (dersom indenteringen er gal er det et tegn pÃ¥ at det er noe galt i koden!)<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-;</code><br  />
+    kommenterer ut et markert omrÃ¥de<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-x compile RET compile-command RET</code><br  />
+lar deg kompilere i Emacs<br  />
+(gir trykkbare linker til der feil oppstod)<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-g g &lt;nr&gt; RET</code><br  />
+    flytter markÃ¸ren til linjenummer <code>&lt;nr&gt;</code><br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-8" >
+
+<h2>Makroer</h2>
+<ul class="org-ul">
+<li class="fragment roll-in">Makroer er en mÃ¥te Ã¥ "ta opp" en rekke kommandoer pÃ¥<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-x (</code><br  />
+    definer en makro<br  />
+</li>
+
+<li class="fragment roll-in"><code>&lt;f3&gt;</code><br  />
+    definer en makro <i>eller</i> sett inn lÃ¸penummer<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-x )</code>, <code>&lt;f4&gt;</code><br  />
+    ferdigstill makroen<br  />
+</li>
+
+<li class="fragment roll-in"><code>C-x e</code><br  />
+    utfÃ¸r makroen<br  />
+</li>
+
+<li class="fragment roll-in"><code>e</code><br  />
+    gjenta makroen<br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-9" >
+
+<h2>Pakker</h2>
+<ul class="org-ul">
+<li class="fragment roll-in">Emacs 24 kommer med innebygd pakkebehandler<br  />
+</li>
+
+<li class="fragment roll-in">det finnes tusenvis av pakker<br  />
+</li>
+
+<li class="fragment roll-in"><code>M-x list-packages</code><br  />
+    bla gjennom pakker<br  />
+
+<ul class="org-ul">
+<li><code>i</code> installere<br  />
+</li>
+
+<li><code>U</code> oppgrader alle<br  />
+</li>
+
+<li><code>d</code> slett<br  />
+</li>
+
+<li><code>x</code> utfÃ¸r installering/oppgradering/sletting<br  />
+</li>
+</ul>
 </li>
 </ul>
 
+</section>
+<section id="sec-9-1" >
 
-</div>
-
-</div>
-
-<div id="outline-container-1-5-3" class="outline-3">
-<h3 id="sec-1-5-3"><span class="section-number-3">1.5.3</span> Buffere</h3>
-<div class="outline-text-3" id="text-1-5-3">
-
-
-<ul>
-<li>C-x b RET
-      bytt buffer
-      (siste besøkte buffer er default)
-
+<h3>Anbefalinger</h3>
+<ul class="org-ul">
+<li><a href="https://github.com/auto-complete/auto-complete">Auto-Complete</a><br  />
+     viser mulige fullfÃ¸ringer<br  />
 </li>
-<li>C-x k RET
-      drep (kill) buffer
-      (det aktive bufferet er default)
 
+<li><a href="https://github.com/emacsmirror/undo-tree">Undo-Tree</a><br  />
+     et mer standard undo-system, med trestruktur<br  />
 </li>
-<li>C-x left, C-x right
-      en annen måte å bytter buffer
+
+<li><a href="https://github.com/magnars/multiple-cursors.el">Multiple cursors</a> (<a href="http://emacsrocks.com/e13.html">demo</a>)<br  />
+lar deg kontrollere flere markÃ¸rer samtidig!<br  />
+</li>
+
+<li><a href="https://github.com/oneKelvinSmith/monokai-emacs">Monokai</a><br  />
+     et fargetema (hentet fra Sublime)<br  />
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-10" >
+
+<h2>Til slutt</h2>
+</section>
+<section id="sec-10-1" >
+
+<h3>Nyttige lenker</h3>
+<ul class="org-ul">
+<li class="fragment roll-in"><a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top">Emacs manualen</a><br  />
+</li>
+<li class="fragment roll-in"><a href="http://termvakt.ifi.uio.no/Emacs">Termvaktens guide til Emacs</a><br  />
+</li>
+<li class="fragment roll-in"><a href="http://www.masteringemacs.org/reading-guide/">En flott blogg om Emacs</a><br  />
+</li>
+<li class="fragment roll-in"><a href="http://www.ic.unicamp.br/~helio/disciplinas/MC102/Emacs_Reference_Card.pdf">En cheat-sheet for Emacs</a><br  />
+</li>
+<li class="fragment roll-in"><a href="https://github.com/larstvei/dot-emacs">Min konfigurasjonsfil</a><br  />
 </li>
 </ul>
 
+</section>
+<section id="sec-10-2" >
 
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-1-6" class="outline-2">
-<h2 id="sec-1-6"><span class="section-number-2">1.6</span> Kommandoer</h2>
-<div class="outline-text-2" id="text-1-6">
-
-
-<ul>
-<li>M-x function RET
-     lar deg kalle en hvilken som helst kommando med navn
-
+<h3>SpÃ¸rsmÃ¥l?</h3>
+<ul class="org-ul">
+<li class="fragment roll-in">Noen spÃ¸rsmÃ¥l nÃ¥?<br  />
 </li>
-<li>M-x replace-string RET erstatt RET med RET
-     tilsvarer «search and replace»
-
+<li class="fragment roll-in">Kom ned i pausen hvis dere har spÃ¸rsmÃ¥l eller Ã¸nske for neste time!<br  />
 </li>
-<li>M-x query-replace RET erstatt RET med RET &hellip; y/n
-     samme som replace-string, men du kan velge hva som skal
-     erstattes
+<li class="fragment roll-in">Gjerne send mail til <a href="mailto:larstvei@ifi.uio.no">larstvei@ifi.uio.no</a>!<br  />
 </li>
 </ul>
-
-
-<p>
-   Bruk TAB for autocomplete!
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-7" class="outline-2">
-<h2 id="sec-1-7"><span class="section-number-2">1.7</span> Søking</h2>
-<div class="outline-text-2" id="text-1-7">
-
-
-<ul>
-<li>C-s
-     søk fremover i bufferet
-
-</li>
-<li>C-r
-     søk bakover i bufferet
-</li>
-</ul>
-
-
-<p>
-   Dette er en effektiv måte å flytte markøren!
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-8" class="outline-2">
-<h2 id="sec-1-8"><span class="section-number-2">1.8</span> Hjelp til selvhjelp</h2>
-<div class="outline-text-2" id="text-1-8">
-
-
-<ul>
-<li>C-h k
-     bruk hvis du lurer på hva en tastekombinasjon gjør
-
-</li>
-<li>C-h f
-     bruk hvis du kjenner navnet på en funksjon, men ikke vet hva hva
-     den gjør
-
-</li>
-<li>C-h m
-     gir deg informasjon om moden du er i
-     (bl.a tastekombinasjoner som er spesielle for moden)
-
-</li>
-<li>C-h a
-     apropos, lar deg søke i hjelpen
-
-</li>
-<li>C-h C-h, C-h ?
-     gir deg hjelp om hjelpen
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-1-9" class="outline-2">
-<h2 id="sec-1-9"><span class="section-number-2">1.9</span> Programmering</h2>
-<div class="outline-text-2" id="text-1-9">
-
-
-<ul>
-<li>TAB indenterer riktig 
-     (dersom indenteringen er gal er det et tegn på at det er noe galt
-     i koden!)
-
-</li>
-<li>M-;
-     kommenterer ut et markert område
-
-</li>
-<li>M-x compile RET compile-command RET
-     lar deg kompilere i Emacs
-     (gir trykkbare linker til der feil oppstod)
-
-</li>
-<li>M-g g &lt;nr&gt; RET
-     flytter markøren til linjenummer &lt;nr&gt;
-</li>
-</ul>
-
-
-</div>
-</div>
+</section>
+</section>
 </div>
 </div>
 
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.min.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
 </body>
 </html>
