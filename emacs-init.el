@@ -1,4 +1,5 @@
-;; we can require features
+;; Requiring features is like loading libraries.
+;; We need these two in the config:
 (require 'cl)
 (require 'package)
 
