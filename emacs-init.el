@@ -10,10 +10,12 @@
 ;; needed to use things downloaded with the package manager
 (package-initialize)
 
-;; install some packages if missing
+;; Find packages by using M-x list-packages
+;; Adding pakcages to the list below ensures that they're installed.
 (let* ((packages '(auto-complete
                    ido-vertical-mode
                    monokai-theme
+                   leuven-theme
                    multiple-cursors
                    undo-tree
                    ;; if you want more packages, add them here
