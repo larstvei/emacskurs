@@ -25,7 +25,6 @@
     (package-refresh-contents)
     (mapc 'package-install packages)))
 
-;; no splash screen
 (dolist (mode '(show-paren-mode         ; show matching parenthesis
                 column-number-mode      ; show column number in mode-line
                 delete-selection-mode   ; overwrite marked text
@@ -51,12 +50,13 @@
 ;; Answer with y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Choose a color-theme
 
-;; answer with y/n
-(fset 'yes-or-no-p 'y-or-n-p)
+;; Suggested dark theme:
+;; (load-theme 'monokai t)
 
-;; choose a color-theme
-(load-theme 'monokai t)
+;; Suggested light theme:
+(load-theme 'leuven t)
 
 ;; get the default config for auto-complete (downloaded with
 ;; package-manager)
