@@ -1,245 +1,248 @@
-#+Title: Emacskurs
-#+Email: larstvei@ifi.uio.no
+#+TITLE: Emacskurs
+#+EMAIL: larstvei@ifi.uio.no
+#+GITHUB: http://github.com/larstvei
 
-#+OPTIONS: toc:1 num:nil \n:1
+#+OPTIONS: num:nil toc:nil \n:1
+
+#+BEAMER_THEME: Rochester
+
 #+REVEAL_TRANS: linear
 #+REVEAL_THEME: night
 #+REVEAL_THEME: moon
 #+REVEAL_SPEED: fast
 #+REVEAL_HLEVEL: 1
 
-* Intro
-** Plan for kurset
-   #+ATTR_REVEAL: :frag roll-in
-   - Før pause:
-     - Innføring i Emacs
-     - Nyttige kommander
-
-   - Etter pause:
-     - Sette opp Emacs på Ifi's maskiner
-     - Skrive en enkel konfigurasjonsfil
-     - Bruke det vi lærte før pause
-
-** Hva er Emacs?
-   #+ATTR_REVEAL: :frag roll-in
-   - Teksteditor
-   - Utvidbar (Emacs Lisp)
-   - Over 30 år gammel
-   - Over 2500 innebygde kommandoer
-   - Fri programvare
-
-** Rammer, vinduer og buffere
-
-   #+ATTR_REVEAL: :frag roll-in
-   - Emacs åpnes i en ramme
-   - Man kan ha flere vinduer i samme ramme
-   - Tekst vises i buffere
-   - Du kan ha så mange åpne buffere du vil
-   - En fil åpnes i et nytt buffer
-   - Minibufferet (nederste linje), brukes til å skrive inn filnavn, buffernavn, etc...
-
-** Modes
-
-   #+ATTR_REVEAL: :frag roll-in
-   - Major modes
-     - hvert buffer har kun én aktiv major mode
-     - en major mode gir deg funksjonalitet for en bestemt type
-       tekstredigering
-     - de fleste programmeringsspråk har sin egen major mode
-
-   - Minor modes
-     - du kan ha så mange aktive minor modes du ønsker
-     - en minor mode tilbyr tilleggsfunksjonalitet
-
-   - Modes tilføyer ofte egne tastekombinasjoner!
-
-** Tips
-
-   - Emacs er annerledes å bruke enn mange andre programmer, så det krever tilvenning.
-
-   #+ATTR_REVEAL: :frag roll-in
-   - i begynnelsen:
-     - les og gjør «learn-by-doing tutorial» (=C-h t=)
-     - tving deg selv til å bruke de kommandoene du lærer til de sitter i fingrene
-     - unngå «pek og klikk»
-
-   - etter hvert (for spesielt interesserte):
-     - skriv din egen config-fil
-     - lær litt Emacs lisp, og skriv dine egne funksjoner
-
-   - annet:
-     - gjør =CAPS-LOCK= om til en ekstra Control (=Ctrl=)
-
-* Taster
-** Terminologi for taster
-
-   #+ATTR_REVEAL: :frag roll-in
-    - =C-<any>=
-      Control
-
-    - =M-<any>=
-      Meta er =Alt= på de fleste maskiner (alternativt =ESC=)
-
-    - =<any>= betyr et vilkårlig tegn (eller tastekombinasjon)
-
-** Prefikstaster
-
-   #+ATTR_REVEAL: :frag roll-in
-    - =C-x <any>=
-      prefiks for globale kommandoer
-
-    - =C-c <any>=
-      prefiks for lokale kommandoer
-      (har ikke alltid samme funksjon!)
-
-    - =C-h <any>=
-      prefiks for hjelp
-
-    - Alle tastekombinasjoner som ikke er en prefiks er bundet til en kommando!
-
-** Komme seg ut
-
-   #+ATTR_REVEAL: :frag roll-in
-    - =C-x C-c=
-      avslutt Emacs
-
-    - =C-g=
-      avbryt
-      (bruk hvis du ikke skjønner hva Emacs holder på med!)
-
-    - =ESC ESC ESC=
-      (bruk hvis =C-g= ikke hjalp)
-
-    - =C-<prefix> C-g=
-      er udefinert
-      (Dvs. =C-g= kan brukes til å avbryte prefiks)
-
-** Tekstredigering
-
-   #+ATTR_REVEAL: :frag roll-in
-    - =C-f=, =C-b=
-      flytt markøren ett tegn frem/tilbake
-
-    - =M-f=, =M-b=
-      flytt markøren ett ord frem/tilbake
-
-    - =C-a=, =C-e=
-      flytt markøren til begynnelsen/slutten av linja
-
-    - =C-p=, =C-n=
-      flytt markøren til forrige/neste linje
-
-** Bla rundt
-
-   #+ATTR_REVEAL: :frag roll-in
-   - =C-v=, =M-v=
-     scroll ned/opp en side
-
-   - =M-<=, =M->=
-     gå til begynnelsen/slutten av bufferet
-
-   - =C-l=
-     vis slik at markøren er i senter/toppen/bunnen
-
-** Kill og yank
-
-   #+ATTR_REVEAL: :frag roll-in
-   - =C-w=
-     kill, tilsvarer cut
-
-   - =C-y=
-     yank, tilsvarer paste
-
-   - =M-w=
-     lagre til kill-ring, tilsvarer copy
-
-   - =C-k=
-     kill, drepe resten av en linje
-
-   - =M-y=, må etterfølges av =C-y=
-     yank-pop, går lenger tilbake på kill-ring
-
-** Feiloppretting
-
-   #+ATTR_REVEAL: :frag roll-in
-   - =C-d=, =M-d=
-     fjern neste bokstav/ord
-
-   - =C-_=, =C-/=, =C-x u=
-     undo!
-
-   - =C-t=, =M-t=
-     bytt om to bokstaver/ord
-
-   - =C-x C-t=
-     bytt om to linjer
-
-   - =M-q=
-     plasserer om tekst i en paragraf slik at linjene ikke overstiger 70 tegn (den ødelegger ikke syntaks i programmeringmodes)
-
-   - =M-u=, =M-l=, =M-c=
-     gjør neste ord til UPPERCASE/lowercase/Capital-Case
-
-** Markering av tekst
-
-   #+ATTR_REVEAL: :frag roll-in
-   - =C-SPC=
-     markerer tekst
-
-   - =C-x h=
-     markerer all tekst
-
-   - =M-h=
-     markerer en paragraf
-
-   - Bruk i kombinasjon med =M-w=, =C-w= og =TAB=
-
-* Filer, vinduer og buffere
-** Filer
-
+* Plan for kurset
   #+ATTR_REVEAL: :frag roll-in
-   - =C-x C-f=
-     åpne fil
-     (hvis den ikke finnes fra før åpnes et tomt buffer med det nye filnavnet)
+  #+ATTR_HTML: :class build
+  - Før pause:
+    - Innføring i Emacs
+    - Nyttige kommander
 
-   - =C-x C-s=
-     lagre buffer
+  - Etter pause:
+    - Sette opp Emacs på Ifi's maskiner
+    - Skrive en enkel konfigurasjonsfil
+    - Bruke det vi lærte før pause
 
-   - =C-x C-w=
-     skrive til fil (tilsvarende «lagre som...»)
+* Hva er Emacs?
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - Teksteditor
+  - Utvidbar (Emacs Lisp)
+  - Over 30 år gammel
+  - Over 2500 innebygde kommandoer
+  - Fri programvare
 
-** Vinduer
+* Rammer, vinduer og buffere
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - Emacs åpnes i en ramme
+  - Man kan ha flere vinduer i samme ramme
+  - Tekst vises i buffere
+  - Du kan ha så mange åpne buffere du vil
+  - En fil åpnes i et nytt buffer
+  - Minibufferet (nederste linje), brukes til å skrive inn filnavn, buffernavn, etc...
 
-   #+ATTR_REVEAL: :frag roll-in
-   - =C-x 2=, =C-x 3=
-     splitt et vindu horisontalt/vertikalt
+* Modes
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - Major modes
+    - hvert buffer har kun én aktiv major mode
+    - en major mode gir deg funksjonalitet for en bestemt type
+      tekstredigering
+    - de fleste programmeringsspråk har sin egen major mode
 
-   - =C-x 1=
-     gjør det aktive vinduet til det eneste vinduet
+  - Minor modes
+    - du kan ha så mange aktive minor modes du ønsker
+    - en minor mode tilbyr tilleggsfunksjonalitet
 
-   - =C-x 0=
-     lukk det aktive vinduet
+  - Modes tilføyer ofte egne tastekombinasjoner!
 
-   - =C-x o=
-     bytt fokus til et annet vindu
+* Tips
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - Emacs er annerledes å bruke enn mange andre programmer, så det krever tilvenning.
 
-** Buffere
+  - i begynnelsen:
+    - les og gjør «learn-by-doing tutorial» (=C-h t=)
+    - tving deg selv til å bruke de kommandoene du lærer til de sitter i fingrene
+    - unngå «pek og klikk»
 
-   #+ATTR_REVEAL: :frag roll-in
-   - =C-x b RET=
-     bytt buffer
-     (siste besøkte buffer er default)
+  - etter hvert (for spesielt interesserte):
+    - skriv din egen config-fil
+    - lær litt Emacs lisp, og skriv dine egne funksjoner
 
-   - =C-x k RET=
-     drep (kill) buffer
-     (det aktive bufferet er default)
+  - annet:
+    - gjør =CAPS-LOCK= om til en ekstra Control (=Ctrl=)
 
-   - =C-x left=, =C-x right=
-     en annen måte å bytter buffer på
+* Terminologi for taster
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+   - =C-<any>=
+     Control
+
+   - =M-<any>=
+     Meta er =Alt= på de fleste maskiner (alternativt =ESC=)
+
+   - =<any>= betyr et vilkårlig tegn (eller tastekombinasjon)
+
+* Prefikstaster
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+   - =C-x <any>=
+     prefiks for globale kommandoer
+
+   - =C-c <any>=
+     prefiks for lokale kommandoer
+     (har ikke alltid samme funksjon!)
+
+   - =C-h <any>=
+     prefiks for hjelp
+
+   - Alle tastekombinasjoner som ikke er en prefiks er bundet til en kommando!
+
+* Komme seg ut
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+   - =C-x C-c=
+     avslutt Emacs
+
+   - =C-g=
+     avbryt
+     (bruk hvis du ikke skjønner hva Emacs holder på med!)
+
+   - =ESC ESC ESC=
+     (bruk hvis =C-g= ikke hjalp)
+
+   - =C-<prefix> C-g=
+     er udefinert
+     (Dvs. =C-g= kan brukes til å avbryte prefiks)
+
+* Tekstredigering
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+   - =C-f=, =C-b=
+     flytt markøren ett tegn frem/tilbake
+
+   - =M-f=, =M-b=
+     flytt markøren ett ord frem/tilbake
+
+   - =C-a=, =C-e=
+     flytt markøren til begynnelsen/slutten av linja
+
+   - =C-p=, =C-n=
+     flytt markøren til forrige/neste linje
+
+* Bla rundt
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-v=, =M-v=
+    scroll ned/opp en side
+
+  - =M-<=, =M->=
+    gå til begynnelsen/slutten av bufferet
+
+  - =C-l=
+    vis slik at markøren er i senter/toppen/bunnen
+
+* Kill og yank
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-w=
+    kill, tilsvarer cut
+
+  - =C-y=
+    yank, tilsvarer paste
+
+  - =M-w=
+    lagre til kill-ring, tilsvarer copy
+
+  - =C-k=
+    kill, drepe resten av en linje
+
+  - =M-y=, må etterfølges av =C-y=
+    yank-pop, går lenger tilbake på kill-ring
+
+* Feiloppretting
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-d=, =M-d=
+    fjern neste bokstav/ord
+
+  - =C-_=, =C-/=, =C-x u=
+    undo!
+
+  - =C-t=, =M-t=
+    bytt om to bokstaver/ord
+
+  - =C-x C-t=
+    bytt om to linjer
+
+  - =M-q=
+    plasserer om tekst i en paragraf slik at linjene ikke overstiger 70 tegn (den ødelegger ikke syntaks i programmeringmodes)
+
+  - =M-u=, =M-l=, =M-c=
+    gjør neste ord til UPPERCASE/lowercase/Capital-Case
+
+* Markering av tekst
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-SPC=
+    markerer tekst
+
+  - =C-x h=
+    markerer all tekst
+
+  - =M-h=
+    markerer en paragraf
+
+  - Bruk i kombinasjon med =M-w=, =C-w= og =TAB=
+
+* Filer
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-x C-f=
+    åpne fil
+    (hvis den ikke finnes fra før åpnes et tomt buffer med det nye filnavnet)
+
+  - =C-x C-s=
+    lagre buffer
+
+  - =C-x C-w=
+    skrive til fil (tilsvarende «lagre som...»)
+
+* Vinduer
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-x 2=, =C-x 3=
+    splitt et vindu horisontalt/vertikalt
+
+  - =C-x 1=
+    gjør det aktive vinduet til det eneste vinduet
+
+  - =C-x 0=
+    lukk det aktive vinduet
+
+  - =C-x o=
+    bytt fokus til et annet vindu
+
+* Buffere
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - =C-x b RET=
+    bytt buffer
+    (siste besøkte buffer er default)
+
+  - =C-x k RET=
+    drep (kill) buffer
+    (det aktive bufferet er default)
+
+  - =C-x left=, =C-x right=
+    en annen måte å bytter buffer på
 
 * Kommandoer
-
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
   - =M-x function RET=
     lar deg kalle en vilkårlig kommando med navn
 
@@ -252,8 +255,8 @@
   - Bruk =TAB= for autocomplete!
 
 * Søking
-
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
   - =C-s=
     søk fremover i bufferet
 
@@ -263,8 +266,8 @@
   - Dette er en /svært/ effektiv måte å flytte markøren på!
 
 * Hjelp til selvhjelp
-
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
   - =C-h k=
     bruk hvis du lurer på hva en tastekombinasjon gjør
 
@@ -281,8 +284,8 @@
     gir deg hjelp om hjelpen
 
 * Programmering
-
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
   - =TAB=
     indenterer riktig (dersom indenteringen er gal er det et tegn på at det er noe galt i koden!)
 
@@ -297,8 +300,8 @@
     flytter markøren til linjenummer =<nr>=
 
 * Makroer
-
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
   - Makroer er en måte å "ta opp" en rekke kommandoer på
 
   - =C-x (=
@@ -317,8 +320,8 @@
     gjenta makroen
 
 * Pakker
-
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
   - Emacs 24 kommer med innebygd pakkebehandler
 
   - det finnes tusenvis av pakker
@@ -334,35 +337,34 @@
       
     - =x= utfør installering/oppgradering/sletting
 
-** Anbefalinger
-
+* Anbefalinger
   #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
 
-   - [[https://github.com/auto-complete/auto-complete][Auto-Complete]]
-     viser mulige fullføringer
-     
-   - [[https://github.com/emacsmirror/undo-tree][Undo-Tree]]
-     et mer standard undo-system, med trestruktur
-     
-   - [[https://github.com/magnars/multiple-cursors.el][Multiple cursors]] ([[http://emacsrocks.com/e13.html][demo]])
-     lar deg kontrollere flere markører samtidig!
+  - [[https://github.com/auto-complete/auto-complete][Auto-Complete]]
+    viser mulige fullføringer
+    
+  - [[https://github.com/emacsmirror/undo-tree][Undo-Tree]]
+    et mer standard undo-system, med trestruktur
+    
+  - [[https://github.com/magnars/multiple-cursors.el][Multiple cursors]] ([[http://emacsrocks.com/e13.html][demo]])
+    lar deg kontrollere flere markører samtidig!
 
-   - [[https://github.com/oneKelvinSmith/monokai-emacs][Monokai]]
-     et fargetema (hentet fra Sublime)
+  - [[https://github.com/oneKelvinSmith/monokai-emacs][Monokai]]
+    et fargetema (hentet fra Sublime)
 
-* Til slutt
+* Nyttige lenker
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top][Emacs manualen]]
+  - [[http://termvakt.ifi.uio.no/Emacs][Termvaktens guide til Emacs]]
+  - [[http://www.masteringemacs.org/reading-guide/][En flott blogg om Emacs]]
+  - [[http://www.ic.unicamp.br/%7Ehelio/disciplinas/MC102/Emacs_Reference_Card.pdf][En cheat-sheet for Emacs]]
+  - [[https://github.com/larstvei/dot-emacs][Min konfigurasjonsfil]]
 
-** Nyttige lenker
-   #+ATTR_REVEAL: :frag roll-in
-   - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top][Emacs manualen]]
-   - [[http://termvakt.ifi.uio.no/Emacs][Termvaktens guide til Emacs]]
-   - [[http://www.masteringemacs.org/reading-guide/][En flott blogg om Emacs]]
-   - [[http://www.ic.unicamp.br/%7Ehelio/disciplinas/MC102/Emacs_Reference_Card.pdf][En cheat-sheet for Emacs]]
-   - [[https://github.com/larstvei/dot-emacs][Min konfigurasjonsfil]]
-
-** Spørsmål?
-
-   #+ATTR_REVEAL: :frag roll-in
-   - Noen spørsmål nå?
-   - Kom ned i pausen hvis dere har spørsmål eller ønske for neste time!
-   - Gjerne send mail til [[mailto:larstvei@ifi.uio.no][larstvei@ifi.uio.no]]!
+* Spørsmål?
+  #+ATTR_REVEAL: :frag roll-in
+  #+ATTR_HTML: :class build
+  - Noen spørsmål nå?
+  - Kom ned i pausen hvis dere har spørsmål eller ønske for neste time!
+  - Gjerne send mail til [[mailto:larstvei@ifi.uio.no][larstvei@ifi.uio.no]]!
