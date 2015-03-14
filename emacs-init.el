@@ -70,22 +70,14 @@
 
 ;; adds all autosave-files (i.e #test.txt#, test.txt~) in one
 ;; directory, avoid clutter in filesystem.
-(defvar emacs-autosave-directory (concat user-emacs-directory "autosaves/"))
-(setq backup-directory-alist
-      `((".*" . ,emacs-autosave-directory))
-      auto-save-file-name-transforms
-      `((".*" ,emacs-autosave-directory t)))
+(defvar emacs-autosave-directory
+  (concat user-emacs-directory "autosaves/")
+  "This variable dictates where to put auto saves. It is set to a directory
+called autosaves located wherever your .emacs.d/ is located.")
 
-;; defining a function that sets more accessible keyboard-bindings to
-;; hiding/showing code-blocs
-(defun hideshow-on ()
-  (interactive)
-  (local-set-key (kbd "<backtab>")   'hs-toggle-hiding)
-  (local-set-key (kbd "C-c <right>") 'hs-show-block)
-  (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-  (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-  (local-set-key (kbd "C-c <down>")  'hs-show-all)
-  (hs-minor-mode t))
+;; Sets all files to be backed up and auto saved in a single directory.
+(setq backup-directory-alist `((".*" . ,emacs-autosave-directory))
+      auto-save-file-name-transforms `((".*" ,emacs-autosave-directory t)))
 
 ;; now we have to tell emacs where to load these functions. Showing
 ;; and hiding codeblocks could be useful for all c-like programming
