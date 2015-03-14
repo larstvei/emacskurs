@@ -34,7 +34,8 @@
                 global-undo-tree-mode   ; use undo-tree-mode globally
                 ;; Enable more modes by adding them here
                 ))
-  (funcall mode 1))
+  (when (fboundp mode)
+    (funcall mode 1)))
 
 (dolist (mode '(blink-cursor-mode        ; stop blinking cursor
                 menu-bar-mode            ; no menubar
@@ -42,7 +43,8 @@
                 scroll-bar-mode         ; scrollbar? no
                 ;; Disable more modes by adding them here.
                 ))
-  (funcall mode 0))
+  (when (fboundp mode)
+    (funcall mode 0)))
 
 ;; No splash screen
 (setq inhibit-splash-screen t)
