@@ -26,44 +26,31 @@
     (mapc 'package-install packages)))
 
 ;; no splash screen
+(dolist (mode '(show-paren-mode         ; show matching parenthesis
+                column-number-mode      ; show column number in mode-line
+                delete-selection-mode   ; overwrite marked text
+                ido-mode                ; changes selection in minibuffer
+                ido-everywhere          ; use ido everywhere
+                ido-vertical-mode       ; show vertically
+                global-undo-tree-mode   ; use undo-tree-mode globally
+                ;; Enable more modes by adding them here
+                ))
+  (funcall mode 1))
+
+(dolist (mode '(blink-cursor-mode        ; stop blinking cursor
+                menu-bar-mode            ; no menubar
+                tool-bar-mode            ; no toolbar either
+                scroll-bar-mode         ; scrollbar? no
+                ;; Disable more modes by adding them here.
+                ))
+  (funcall mode 0))
+
+;; No splash screen
 (setq inhibit-splash-screen t)
 
-;; show matching parenthesis
-(show-paren-mode 1)
+;; Answer with y/n
+(fset 'yes-or-no-p 'y-or-n-p)
 
-;; show column number in mode-line
-(column-number-mode 1)
-
-;; overwrite marked text
-(delete-selection-mode 1)
-
-;; changes selection in the minibuffer
-(ido-mode 1)
-
-;; use ido everywhere
-(ido-everywhere 1)
-
-;; show vertically
-(ido-vertical-mode 1)
-
-;; use undo-tree-mode globally
-(global-undo-tree-mode 1)
-
-;; stop blinking cursor
-(blink-cursor-mode 0)
-
-;; no menubar
-(menu-bar-mode 0)
-
-;; no toolbar either
-(tool-bar-mode 0)
-
-;; scrollbar? no
-(scroll-bar-mode 0)
-
-;; global-linum-mode shows line numbers in all buffers, exchange 0
-;; with 1 to enable this feature
-(global-linum-mode 0)
 
 ;; answer with y/n
 (fset 'yes-or-no-p 'y-or-n-p)
