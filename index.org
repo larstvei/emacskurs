@@ -1,0 +1,224 @@
+#+TITLE: Emacskurs
+# #+OPTIONS: toc:nil num:nil
+#+OPTIONS: toc:2 num:nil H:4 tex:imagemagick
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1"/>
+#+HTML_HEAD: <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML_HEAD: <link href="images/emacs-icon.png" type="image/png" rel="icon">
+#+HTML_HEAD: <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="js/jquery.tocify.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="js/org-bootstrap.js"></script>
+
+* Introduksjon
+
+  Dette kurset arrangeres av [[http://fui.ifi.uio.no/][Fagutvalget ved Institutt for informatikk]], og
+  holdes på Institutt for Informatikk i Simula, Tirsdag 17. Mars kl. 16:15.
+
+  Denne siden er et supplement til kurset, der deler av stoffet dekkes, samt
+  linker til annet kursmaterialet og andre nyttige lenker.
+
+** Kursmateriale
+
+   - [[./emacskurs.html][Foiler]]
+   - [[./emacs-init.el][Konfigurasjonsfil]]
+   - [[./handout.html][Handout]]
+
+** Nyttige lenker
+   - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top][Emacs manualen]]
+   - [[http://termvakt.ifi.uio.no/Emacs][Termvaktens guide til Emacs]]
+   - [[http://www.masteringemacs.org/reading-guide/][En flott blogg om Emacs]]
+   - [[http://www.ic.unicamp.br/%7Ehelio/disciplinas/MC102/Emacs_Reference_Card.pdf][En cheat-sheet for Emacs]]
+   - [[http://www.reddit.com/r/emacs/][/r/emacs]]
+   - [[https://github.com/larstvei/dot-emacs][Min konfigurasjonsfil]]
+
+* Installasjon av Emacs
+  
+** Emacs på Ifi
+
+   På Ifi er Emacs allerede installert. Du kan se hvilken versjon du har
+   tilgjengelig ved å skrive følgende i terminalen:
+
+   #+BEGIN_SRC sh
+     [larstvei@vetur ~]$ emacs --version
+     GNU Emacs 23.1.1
+     Copyright (C) 2009 Free Software Foundation, Inc.
+     GNU Emacs comes with ABSOLUTELY NO WARRANTY.  You may redistribute copies of
+     Emacs under the terms of the GNU General Public License.  For more
+     information about these matters, see the file named COPYING.
+   #+END_SRC
+
+   I filområdet =/snacks/bin/= ligger det ekstra programvare, og der er en
+   nyere versjon av Emacs tilgjengelig. Se Termvaktsidene for mer informasjon
+   om [[http://termvakt.uio.no/Snacks][Snacks]].
+
+   #+BEGIN_SRC sh
+     [larstvei@vetur ~]$ /snacks/bin/emacs-newest --version
+     GNU Emacs 24.4.1
+     Copyright (C) 2014 Free Software Foundation, Inc.
+     GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+     You may redistribute copies of Emacs
+     under the terms of the GNU General Public License.
+     For more information about these matters, see the file named COPYING.
+   #+END_SRC
+   
+   For å slippe å skrive =/snacks/bin/emacs-newest= hver gang kan vi lage et
+   alias. Denne kommandoen legger til en linje i din =~/.bashrc=-fil:
+
+   #+BEGIN_SRC sh
+     echo alias emacs='/snacks/bin/emacs-newest' >> ~/.bashrc
+   #+END_SRC
+
+   Kommandoen ~alias emacs='/snacks/bin/emacs-newest'~ vil kjøres hver gang
+   du åpner en ny terminal. For at endringen skal ta effekt med en gang kan
+   du bruke ~source~:
+
+   #+BEGIN_SRC sh
+     [larstvei@vetur ~]$ source ~/.bashrc
+     [larstvei@vetur ~]$ emacs --version
+     GNU Emacs 24.4.1
+     Copyright (C) 2014 Free Software Foundation, Inc.
+     GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+     You may redistribute copies of Emacs
+     under the terms of the GNU General Public License.
+     For more information about these matters, see the file named COPYING.
+   #+END_SRC
+
+   Fra Emacs 24 og oppover kommer Emacs med en innebygget pakke-behandler
+   som gjør det svært enkelt å finne nyttige utvidelser for Emacs. Denne
+   brukes i konfigurasjonsfilen, så man må med andre ord ha Emacs 24 for at
+   den skal fungere.
+
+** Emacs på egen maskin
+
+   Emacs er tilgjengelig på Linux, OS X og Windows. 
+
+*** Linux
+    
+    De aller fleste pakkesystemer for Linux har Emacs 24 tilgjengelig. Her
+    dekkes hvordan Emacs kan installeres for Ubuntu og Fedora, som
+    bruker hhv. ~apt-get~ og ~yum~.
+
+    For Ubuntu (og Debian) kan du bruke kommandoen:
+
+    #+BEGIN_SRC sh
+      sudo apt-get install emacs24
+    #+END_SRC
+
+    For Fedora skriver du kun:
+
+    #+BEGIN_SRC sh
+      sudo apt-get install emacs
+    #+END_SRC
+
+*** OS X
+
+    Dersom du ikke allerede bruker [[http://brew.sh/][Homebrew]] kan du laste ned Emacs hos [[http://emacsformacosx.com/][Emacs
+    For OS X]]. Det er kun å flytte Emacs fra .dmg-fila til ~Applikasjoner~.
+    
+    For Homebrew kan du kjøre kommandoen:
+
+    #+BEGIN_SRC sh
+      brew install --cocoa emacs
+    #+END_SRC
+
+    For at den skal bli søkbar i Spotlight må du kopiere Emacs til
+    ~Applikasjoner~. Kommandoen ~open~ åpner filer og mapper, så ved å
+    kjøre:
+
+    #+BEGIN_SRC sh
+      open /usr/local/Cellar/emacs/24.4/
+    #+END_SRC
+
+    kan du bare flytte Emacs til ~Applikasjoener~.
+
+    Dersom man bruker Alfred holder det å legge til ~/usr/local/~ under
+    Features->Search Scope.
+
+*** Windows
+
+    Du kan laste ned Emacs [[http://ftp.gnu.org/pub/gnu/emacs/windows/][her]]. Du finner filene helt på bunnen av siden, du
+    kan laste ned ~emacs-24.3-bin-i386.zip~, eller prøve en nyere hvis det
+    er tilgjengelig.
+
+* Litt om bruk av verktøy
+
+  Som informatikkstudenter jobber vi mye med å løse problemer. Når vi jobber
+  med programmering blir vi ofte møtt med mange små hindringer som
+  distraherer oss fra problemet vi prøver å løse. Ved å velge gode verktøy
+  kan du unngå mange av disse hindringene og heller fokuser på å jobbe med
+  selve  problemet.
+
+  Verktøyene vi bruker er gjerne programmer som [[http://termvakt.uio.no/Fjerninnlogging][SSH]], [[http://git-scm.com/][Git]], [[https://gcc.gnu.org/][GCC]], [[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html][JDK]], [[https://eclipse.org/][Eclipse]],
+  [[http://www.latex-project.org/][LaTeX]] eller [[https://www.mozilla.org/en-US/firefox/developer/][Firefox]] og selvfølgelig et hav andre. De programmene vi velger
+  utgjør arbeidsflyten vår.
+
+  Noe av det vi gjør mest som programmerere er å jobbe med tekst. Det finnes
+  mange programmer som gjør denne jobben utmerket, f. eks. [[http://www.vim.org/][Vim]], [[http://www.sublimetext.com/3][Sublime]]
+  eller [[https://atom.io/][Atom]]. Vi skal lære om teksteditoren [[http://www.gnu.org/software/emacs/][Emacs]], som er designet slik at
+  du kan endre Emacs mens det kjører, som viser seg å være et utrolig
+  kraftig verktøy (spesielt for en programmerer).
+
+  Om du ser for deg at du kommer til å programmere i mange år fremover er
+  min anbefaling at du lærer deg en håndfull programmer /godt/, og at en av
+  disse programmene bør være en teksteditor. Dersom du ønsker et fleksibelt
+  verktøy som dekker de fleste aspektene av programmering bør du se hva
+  Emacs har å tilby.
+
+** Emacs
+
+   Før vi begir oss ut på å besvare hva i all verden Emacs faktisk /er/, kan
+   vi se på hvordan vi kan besvare hva et program vi allerede kjenner til
+   er. Siden jeg antar at de fleste har god kjennskap til Firefox, prøver vi
+   å gi en kort forklaring på hva Firefox er.
+
+   Firefox er en nettleser. Dette er sant, men det sier ikke så mye om hva
+   Firefox faktisk /gjør/. Firefox er et program som gir brukeren et
+   interface for å sende HTTP-forespørsler. Når den mottar et svar
+   inneholder dette en tekst som beskriver strukturen til et dokument
+   (HTML), og tekstinnholdet som skal plasseres i strukturen. Den mottar
+   også en beskrivelse av hvordan dokumentet skal se ut (CSS). I tillegg har
+   den en språktolker, som kan tolke Javascript-kode, som vil si at vi har
+   et fullverdig programmeringsspråk i nettleseren! Firefox er med andre ord
+   et vanvittig svært og kraftig program ([[https://www.openhub.net/p/firefox][12,625,661 linjer med kode]]).
+   
+   Emacs er en teksteditor, dette er også sant, men igjen forteller det ikke
+   så mye. Emacs er et program som gir brukeren et interface for å redigere
+   tekst. I bunn er det en språktolker som kan tolke Emacs Lisp kode, som er
+   et fullverdig programmeringsspråk, med et stort bibliotek av funksjoner
+   som lar deg operere på tekst. Hver gang Emacs mottar et tastetrykk fyres
+   det av en funksjon. Disse funksjonene er som regel skrevet i Emacs Lisp
+   (resten er skrevet i C), og du kan åpne kildekoden og utforske hva den
+   gjør.
+
+   Siden Emacs Lisp er et tolket språk kan vi evaluere kode mens Emacs
+   kjører, og se effekten umiddelbart. Vi kan definere nye funksjoner, eller
+   redefinere eksisterende, og endre Emacs til å gjøre oppgavene vi
+   ønsker. Det unike med Emacs er at de endringene du gjør blir en
+   likeverdig del av Emacs som det som er innebygget, som betyr den er
+   utvidbar.
+
+   Som en effekt kan man bruke Emacs til utrolig mye forskjellig. Det finnes
+   støtte for de aller fleste programmeringsspråk, samt markup-språk som
+   HTML, LaTeX, Markdown og Org. Emacs kan også kommunisere med eksterne
+   prosesser, som lar deg f. eks. kjøre en terminal i Emacs, sende kode fra
+   et Emacs-buffer til en ekstern språktolker (f. eks. Python), som så
+   evalueres, kompilere LaTeX-dokumenter fra Emacs eller tilby et interface
+   til [[https://github.com/magit/magit][Git]].
+
+   Dersom man velger å bruke Emacs kan man også velge vekk veldig mange
+   andre programmer. Fordelen med dette er at det blir en mindre
+   læringskurve når du skal benytte deg av et nytt programmeringsspråk
+   e. l. siden du allerede er kjent med verktøyet. Ulempen er at
+   læringskurven til Emacs kan være noe bratt.
+
+* Lisens
+
+#+BEGIN_HTML
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+#+END_HTML
+
+  Dette verk er lisensieret under en [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons
+  Navngivelse-DelPåSammeVilkår 4.0 Internasjonal lisens]].
+
