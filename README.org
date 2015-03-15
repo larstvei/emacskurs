@@ -1,0 +1,14 @@
+* Emacskurs vår 2015
+
+  Her ligger kildekoden til alt kursmaterialet for kurset. Kurset arrangeres
+  av [[http://fui.ifi.uio.no/][Fagutvalget ved Institutt for informatikk]], og holdes på Institutt for
+  Informatikk i Simula, Tirsdag 17. Mars kl. 16:15.
+
+  Her er en oversikt over hva de forskjellige filene er:
+
+  - ~emacs-init.el~ - en enkel konfigurasjonsfil.
+  - ~emacskurs.org~ - org-filen som foilene genereres fra.
+  - ~handout.org~ - org-filen handouts genereres fra.
+  - ~index.org~ - org-filen som kursets nettside genereres fra.
+
+  Du finner mer informasjon på [[http://folk.uio.no/larstvei/emacskurs/][kursets nettside]].
