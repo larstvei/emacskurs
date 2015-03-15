@@ -72,8 +72,7 @@
     - skriv din egen config-fil
     - lær litt Emacs lisp, og skriv dine egne funksjoner
 
-  - annet:
-    - gjør =CAPS-LOCK= om til en ekstra Control (=Ctrl=)
+  - gjør =CAPS-LOCK= om til en ekstra Control (=Ctrl=)
 
 * Terminologi for taster
   #+ATTR_REVEAL: :frag roll-in
