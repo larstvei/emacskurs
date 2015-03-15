@@ -98,7 +98,8 @@
    - =C-h <any>=
      prefiks for hjelp
 
-   - Alle tastekombinasjoner som ikke er en prefiks er bundet til en kommando!
+   - Alle tastekombinasjoner som ikke er en prefiks er enten bundet til en
+     kommando eller udefinert.
 
 * Komme seg ut
   #+ATTR_REVEAL: :frag roll-in
