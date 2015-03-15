@@ -33,8 +33,10 @@
    - [[http://www.reddit.com/r/emacs/][/r/emacs]]
    - [[https://github.com/larstvei/dot-emacs][Min konfigurasjonsfil]]
 
-* Installasjon av Emacs
-  
+* Komme igang med Emacs
+
+  Her står det litt om hvordan du installerer og konfigurerer Emacs.
+
 ** Emacs på Ifi
 
    På Ifi er Emacs allerede installert. Du kan se hvilken versjon du har
