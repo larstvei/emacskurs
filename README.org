@@ -11,4 +11,15 @@
   - ~handout.org~ - org-filen handouts genereres fra.
   - ~index.org~ - org-filen som kursets nettside genereres fra.
 
-  Du finner mer informasjon på [[http://folk.uio.no/larstvei/emacskurs/][kursets nettside]].
+  Du finner alt materiale på [[http://folk.uio.no/larstvei/emacskurs/][kursets nettside]] (som er generert fra
+  ~index.org~). Merk at GitHub har støtte for å vise ~.org~-filer, så du kan
+  lese alt materiale på GitHub.
+
+* Lisens
+
+#+BEGIN_HTML
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+#+END_HTML
+
+  Dette verk er lisensieret under en [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons
+  Navngivelse-DelPåSammeVilkår 4.0 Internasjonal lisens]].
