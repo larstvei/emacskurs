@@ -149,6 +149,40 @@
     kan laste ned ~emacs-24.3-bin-i386.zip~, eller prøve en nyere hvis det
     er tilgjengelig.
 
+** Konfigurere Emacs
+
+   Her gang Emacs starter ser den etter en konfigurasjonsfil, den velger
+   /den første/ den finner av disse tre filene:
+
+   - =~/.emacs=
+   - =~/.emacs.el=
+   - =~/.emacs.d/init.el=
+
+   Den siste ligger altså i en mappe som heter =~/.emacs.d/=, det kan være
+   fordelaktig dersom du ønsker å spre konfigurasjonen din over flere
+   ~.el~-filer, eller dersom du ønsker å ha færre filer liggende i
+   hjemmeområdet.
+
+   Konfigurasjonsfilen blir tolket som et vanlig Emacs Lisp program, så alt
+   innholdet må være Emacs Lisp kode.
+   
+   For å begynne kan du åpne Emacs og skrive =C-x C-f RET ~/.emacs=, og
+   skrive inn litt Emacs Lisp, f. eks:
+
+   #+BEGIN_SRC emacs-lisp
+     (blink-cursor-mode 0)
+   #+END_SRC
+
+   Dersom du lagrer (med =C-x C-s=) og åpner Emacs på nytt vil du se at
+   markøren ikke blinker lenger. Siden Emacs kan endres /under kjøring/ kan
+   du kun evaluere uttrykket, dette kan du gjøre ved å skrive =M-x
+   eval-buffer=, som evaluerer hele bufferet. Du kan også evaluere et enkelt
+   uttrykk ved å plassere markøren ved slutten av uttrykket og trykke =C-x
+   C-e=.
+
+   Hvordan man konfigurerer gås nøyere gjennom under kurset, og vi tar
+   utgangspunkt i en enkel [[./emacs-init.el][konfigurasjonsfil]].
+   
 * Litt om bruk av verktøy
 
   Som informatikkstudenter jobber vi mye med å løse problemer. Når vi jobber
