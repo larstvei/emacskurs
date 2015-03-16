@@ -198,9 +198,9 @@
 
   Noe av det vi gjør mest som programmerere er å jobbe med tekst. Det finnes
   mange programmer som gjør denne jobben utmerket, f. eks. [[http://www.vim.org/][Vim]], [[http://www.sublimetext.com/3][Sublime]]
-  eller [[https://atom.io/][Atom]]. Vi skal lære om teksteditoren [[http://www.gnu.org/software/emacs/][Emacs]], som er designet slik at
-  du kan endre Emacs mens det kjører, som viser seg å være et utrolig
-  kraftig verktøy (spesielt for en programmerer).
+  eller [[https://atom.io/][Atom]]. Vi skal lære om teksteditoren [[http://www.gnu.org/software/emacs/][Emacs]]. Det aller beste med Emacs
+  er at det kan /endres mens det kjører/. Dette er en utrolig kraftig
+  egenskap.
 
   Om du ser for deg at du kommer til å programmere i mange år fremover er
   min anbefaling at du lærer deg en håndfull programmer /godt/, og at en av
