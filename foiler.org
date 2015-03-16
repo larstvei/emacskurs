@@ -13,6 +13,7 @@
 #+REVEAL_HLEVEL: 1
 
 * Plan for kurset
+  #+ATTR_REVEAL: :frag roll-in
   - Før pause:
     - Liten demonstrasjon av hvordan man kommer igang med Emacs på Ifi's
       maskiner
@@ -24,6 +25,7 @@
     - Tar imot alt av spørsmål fra salen!
 
 * Hva er Emacs?
+  #+ATTR_REVEAL: :frag roll-in
   - Teksteditor
   - Utvidbar (Emacs Lisp)
   - Over 30 år gammel
@@ -31,6 +33,7 @@
   - Fri programvare
 
 * Rammer, vinduer og buffere
+  #+ATTR_REVEAL: :frag roll-in
   - Emacs åpnes i en ramme
   - Man kan ha flere vinduer i samme ramme
   - Tekst vises i buffere
@@ -39,6 +42,7 @@
   - Minibufferet (nederste linje), brukes til å skrive inn filnavn, buffernavn, etc...
 
 * Modes
+  #+ATTR_REVEAL: :frag roll-in
   - Major modes
     - hvert buffer har kun én aktiv major mode
     - en major mode gir deg funksjonalitet for en bestemt type
@@ -52,6 +56,7 @@
   - Modes tilføyer ofte egne tastekombinasjoner!
 
 * Tips
+  #+ATTR_REVEAL: :frag roll-in
   - Emacs er annerledes å bruke enn mange andre programmer, så det krever tilvenning.
 
   - i begynnelsen:
@@ -66,6 +71,7 @@
   - gjør =CAPS-LOCK= om til en ekstra Control (=Ctrl=)
 
 * Terminologi for taster
+  #+ATTR_REVEAL: :frag roll-in
    - =C-<any>=
      Control
 
@@ -75,6 +81,7 @@
    - =<any>= betyr et vilkårlig tegn (eller tastekombinasjon)
 
 * Prefikstaster
+  #+ATTR_REVEAL: :frag roll-in
    - =C-x <any>=
      prefiks for globale kommandoer
 
@@ -89,6 +96,7 @@
      kommando eller udefinert.
 
 * Komme seg ut
+  #+ATTR_REVEAL: :frag roll-in
    - =C-x C-c=
      avslutt Emacs
 
@@ -104,6 +112,7 @@
      (Dvs. =C-g= kan brukes til å avbryte prefiks)
 
 * Tekstredigering
+  #+ATTR_REVEAL: :frag roll-in
    - =C-f=, =C-b=
      flytt markøren ett tegn frem/tilbake
 
@@ -117,6 +126,7 @@
      flytt markøren til forrige/neste linje
 
 * Bla rundt
+  #+ATTR_REVEAL: :frag roll-in
   - =C-v=, =M-v=
     scroll ned/opp en side
 
@@ -127,6 +137,7 @@
     vis slik at markøren er i senter/toppen/bunnen
 
 * Kill og yank
+  #+ATTR_REVEAL: :frag roll-in
   - =C-w=
     kill, tilsvarer cut
 
@@ -143,6 +154,7 @@
     yank-pop, går lenger tilbake på kill-ring
 
 * Feiloppretting
+  #+ATTR_REVEAL: :frag roll-in
   - =C-d=, =M-d=
     fjern neste bokstav/ord
 
@@ -162,6 +174,7 @@
     gjør neste ord til UPPERCASE/lowercase/Capital-Case
 
 * Markering av tekst
+  #+ATTR_REVEAL: :frag roll-in
   - =C-SPC=
     markerer tekst
 
@@ -174,6 +187,7 @@
   - Bruk i kombinasjon med =M-w=, =C-w= og =TAB=
 
 * Filer
+  #+ATTR_REVEAL: :frag roll-in
   - =C-x C-f=
     åpne fil
     (hvis den ikke finnes fra før åpnes et tomt buffer med det nye filnavnet)
@@ -185,6 +199,7 @@
     skrive til fil (tilsvarende «lagre som...»)
 
 * Vinduer
+  #+ATTR_REVEAL: :frag roll-in
   - =C-x 2=, =C-x 3=
     splitt et vindu horisontalt/vertikalt
 
@@ -198,6 +213,7 @@
     bytt fokus til et annet vindu
 
 * Buffere
+  #+ATTR_REVEAL: :frag roll-in
   - =C-x b RET=
     bytt buffer
     (siste besøkte buffer er default)
@@ -210,6 +226,7 @@
     en annen måte å bytter buffer på
 
 * Kommandoer
+  #+ATTR_REVEAL: :frag roll-in
   - =M-x function RET=
     lar deg kalle en vilkårlig kommando med navn
 
@@ -222,6 +239,7 @@
   - Bruk =TAB= for autocomplete!
 
 * Søking
+  #+ATTR_REVEAL: :frag roll-in
   - =C-s=
     søk fremover i bufferet
 
@@ -231,6 +249,7 @@
   - Dette er en /svært/ effektiv måte å flytte markøren på!
 
 * Hjelp til selvhjelp
+  #+ATTR_REVEAL: :frag roll-in
   - =C-h k=
     bruk hvis du lurer på hva en tastekombinasjon gjør
 
@@ -247,6 +266,7 @@
     gir deg hjelp om hjelpen
 
 * Programmering
+  #+ATTR_REVEAL: :frag roll-in
   - =TAB=
     indenterer riktig (dersom indenteringen er gal er det et tegn på at det er noe galt i koden!)
 
@@ -261,6 +281,7 @@
     flytter markøren til linjenummer =<nr>=
 
 * Makroer
+  #+ATTR_REVEAL: :frag roll-in
   - Makroer er en måte å "ta opp" en rekke kommandoer på
 
   - =C-x (=
@@ -279,6 +300,7 @@
     gjenta makroen
 
 * Pakker
+  #+ATTR_REVEAL: :frag roll-in
   - Emacs 24 kommer med innebygd pakkebehandler
 
   - det finnes tusenvis av pakker
@@ -295,6 +317,7 @@
     - =x= utfør installering/oppgradering/sletting
 
 * Anbefalinger
+  #+ATTR_REVEAL: :frag roll-in
   - [[https://github.com/auto-complete/auto-complete][Auto-Complete]]
     viser mulige fullføringer
 
@@ -308,6 +331,7 @@
     et fargetema (hentet fra Sublime)
 
 * Nyttige lenker
+  #+ATTR_REVEAL: :frag roll-in
   - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top][Emacs manualen]]
   - [[http://termvakt.ifi.uio.no/Emacs][Termvaktens guide til Emacs]]
   - [[http://www.masteringemacs.org/reading-guide/][En flott blogg om Emacs]]
@@ -315,6 +339,7 @@
   - [[https://github.com/larstvei/dot-emacs][Min konfigurasjonsfil]]
 
 * Spørsmål?
+  #+ATTR_REVEAL: :frag roll-in
   - Noen spørsmål nå?
   - Kom ned i pausen hvis dere har spørsmål eller ønske for neste time!
   - Gjerne send mail til [[mailto:larstvei@ifi.uio.no][larstvei@ifi.uio.no]]!
