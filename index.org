@@ -178,7 +178,8 @@
    du kun evaluere uttrykket, dette kan du gjøre ved å skrive =M-x
    eval-buffer=, som evaluerer hele bufferet. Du kan også evaluere et enkelt
    uttrykk ved å plassere markøren ved slutten av uttrykket og trykke =C-x
-   C-e=.
+   C-e=. Merk at endringer du gjør som ikke largres noe sted vil mistes når
+   du lukker Emacs.
 
    Hvordan man konfigurerer gås nøyere gjennom under kurset, og vi tar
    utgangspunkt i en enkel [[./emacs-init.el][konfigurasjonsfil]].
