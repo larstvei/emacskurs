@@ -13,7 +13,7 @@
 
   Du finner alt materiale på [[http://folk.uio.no/larstvei/emacskurs/][kursets nettside]] (som er generert fra
   ~index.org~). Merk at GitHub har støtte for å vise ~.org~-filer, så du kan
-  lese alt materiale på GitHub.
+  lese alt materiale her på GitHub.
 
 * Lisens
 

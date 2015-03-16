@@ -210,7 +210,7 @@
    til [[https://github.com/magit/magit][Git]].
 
    Dersom man velger å bruke Emacs kan man også velge vekk veldig mange
-   andre programmer. Fordelen med dette er at det blir en mindre
+   andre programmer. Fordelen med dette er at det blir en slakere
    læringskurve når du skal benytte deg av et nytt programmeringsspråk
    e. l. siden du allerede er kjent med verktøyet. Ulempen er at
    læringskurven til Emacs kan være noe bratt.
