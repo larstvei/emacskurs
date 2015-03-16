@@ -197,9 +197,9 @@
    Siden Emacs Lisp er et tolket språk kan vi evaluere kode mens Emacs
    kjører, og se effekten umiddelbart. Vi kan definere nye funksjoner, eller
    redefinere eksisterende, og endre Emacs til å gjøre oppgavene vi
-   ønsker. Det unike med Emacs er at de endringene du gjør blir en
-   likeverdig del av Emacs som det som er innebygget, som betyr den er
-   utvidbar.
+   ønsker. Det unike med Emacs er at de endringene du gjør er en like «sann»
+   del av Emacs som alt av innebygd funksjonalitet, som gjør den langt mer
+   utvidbar enn de fleste andre programmer.
 
    Som en effekt kan man bruke Emacs til utrolig mye forskjellig. Det finnes
    støtte for de aller fleste programmeringsspråk, samt markup-språk som
@@ -214,6 +214,8 @@
    læringskurve når du skal benytte deg av et nytt programmeringsspråk
    e. l. siden du allerede er kjent med verktøyet. Ulempen er at
    læringskurven til Emacs kan være noe bratt.
+
+   [[file:editor-learning-curve.png]]
 
 * Lisens
 
