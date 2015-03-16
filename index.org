@@ -21,6 +21,8 @@
 
 ** Kursmateriale
 
+   Kildekoden for alt materiale ligger på [[https://github.com/larstvei/emacskurs][GitHub]]. Her finner du:
+
    - [[./emacskurs.html][Foiler]]
    - [[./emacs-init.el][Konfigurasjonsfil]]
    - [[./handout.html][Handout]]
