@@ -27,6 +27,9 @@
    - [[./emacs-init.el][Konfigurasjonsfil]]
    - [[./handout.html][Handout]]
 
+   Nettsiden er generert med et egenkomponert [[https://github.com/larstvei/org-bootstrap-document][Org-scheme]], og foilene er
+   generert med [[https://github.com/coldnew/org-ioslide][org-ioslide]].
+
 ** Nyttige lenker
    - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top][Emacs manualen]]
    - [[http://termvakt.ifi.uio.no/Emacs][Termvaktens guide til Emacs]]
