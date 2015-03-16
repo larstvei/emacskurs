@@ -210,27 +210,11 @@
 
 ** Emacs
 
-   Før vi begir oss ut på å besvare hva i all verden Emacs faktisk /er/, kan
-   vi se på hvordan vi kan besvare hva et program vi allerede kjenner til
-   er. Siden jeg antar at de fleste har god kjennskap til Firefox, prøver vi
-   å gi en kort forklaring på hva Firefox er.
-
-   Firefox er en nettleser. Dette er sant, men det sier ikke så mye om hva
-   Firefox faktisk /gjør/. Firefox er et program som gir brukeren et
-   interface for å sende HTTP-forespørsler. Når den mottar et svar
-   inneholder dette en tekst som beskriver strukturen til et dokument
-   (HTML), og tekstinnholdet som skal plasseres i strukturen. Den mottar
-   også en beskrivelse av hvordan dokumentet skal se ut (CSS). I tillegg har
-   den en språktolker, som kan tolke Javascript-kode, som vil si at vi har
-   et fullverdig programmeringsspråk i nettleseren! Firefox er med andre ord
-   et vanvittig svært og kraftig program ([[https://www.openhub.net/p/firefox][12,625,661 linjer med kode]]).
-   
-   Emacs er en teksteditor, dette er også sant, men igjen forteller det ikke
-   så mye. Emacs er et program som gir brukeren et interface for å redigere
-   tekst. I bunn er det en språktolker som kan tolke Emacs Lisp kode, som er
-   et fullverdig programmeringsspråk, med et stort bibliotek av funksjoner
-   som lar deg operere på tekst. Hver gang Emacs mottar et tastetrykk fyres
-   det av en funksjon. Disse funksjonene er som regel skrevet i Emacs Lisp
+   Emacs er et program som gir brukeren et interface for å redigere tekst. I
+   bunn er det en språktolker som kan tolke Emacs Lisp kode, som er et
+   fullverdig programmeringsspråk, med et stort bibliotek av funksjoner som
+   lar deg operere på tekst. Hver gang Emacs mottar et tastetrykk fyres det
+   av en funksjon. Disse funksjonene er som regel skrevet i Emacs Lisp
    (resten er skrevet i C), og du kan åpne kildekoden og utforske hva den
    gjør.
 
