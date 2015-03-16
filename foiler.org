@@ -15,14 +15,23 @@
 * Plan for kurset
   #+ATTR_REVEAL: :frag roll-in
   #+ATTR_HTML: :class build
-  - Før pause:
-    - Innføring i Emacs
-    - Nyttige kommander
+  # - Før pause:
+  #   - Innføring i Emacs
+  #   - Nyttige kommander
 
+  # - Etter pause:
+  #   - Sette opp Emacs på Ifi's maskiner
+  #   - Skrive en enkel konfigurasjonsfil
+  #   - Bruke det vi lærte før pause
+  - Før pause:
+    - Liten demonstrasjon av hvordan man kommer igang med Emacs på Ifi's
+      maskiner
+    - Snakk om hva Emacs er
+    - Gå raskt gjennom foilene og dekker «basics»
   - Etter pause:
-    - Sette opp Emacs på Ifi's maskiner
-    - Skrive en enkel konfigurasjonsfil
-    - Bruke det vi lærte før pause
+    - Mer praktiske eksempler.
+    - Vise hvordan Org-mode fungerer, og hva det kan brukes til
+    - Tar imot alt av spørsmål fra salen!
 
 * Hva er Emacs?
   #+ATTR_REVEAL: :frag roll-in
@@ -306,7 +315,7 @@
 
   - =C-x (=
     definer en makro
-    
+
   - =<f3>=
     definer en makro /eller/ sett inn løpenummer
 
@@ -330,11 +339,11 @@
     bla gjennom pakker
 
     - =i= installere
-      
+
     - =U= oppgrader alle
-      
+
     - =d= slett
-      
+
     - =x= utfør installering/oppgradering/sletting
 
 * Anbefalinger
@@ -343,10 +352,10 @@
 
   - [[https://github.com/auto-complete/auto-complete][Auto-Complete]]
     viser mulige fullføringer
-    
+
   - [[https://github.com/emacsmirror/undo-tree][Undo-Tree]]
     et mer standard undo-system, med trestruktur
-    
+
   - [[https://github.com/magnars/multiple-cursors.el][Multiple cursors]] ([[http://emacsrocks.com/e13.html][demo]])
     lar deg kontrollere flere markører samtidig!
 
