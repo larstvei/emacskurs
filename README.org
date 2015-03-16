@@ -6,10 +6,10 @@
 
   Her er en oversikt over hva de forskjellige filene er:
 
-  - ~emacs-init.el~ - en enkel konfigurasjonsfil.
-  - ~emacskurs.org~ - org-filen som foilene genereres fra.
-  - ~handout.org~ - org-filen handouts genereres fra.
-  - ~index.org~ - org-filen som kursets nettside genereres fra.
+  - [[./emacs-init.el][emacs-init.el]] - en enkel konfigurasjonsfil.
+  - [[./foiler.org][foiler.org]] - org-filen som foilene genereres fra.
+  - [[./handout.org][handout.org]] - org-filen handouts genereres fra.
+  - [[./index.org][index.org]] - org-filen som kursets nettside genereres fra.
 
   Du finner alt materiale på [[http://folk.uio.no/larstvei/emacskurs/][kursets nettside]] (som er generert fra
   ~index.org~). Merk at GitHub har støtte for å vise ~.org~-filer, så du kan
