@@ -69,7 +69,7 @@
      under the terms of the GNU General Public License.
      For more information about these matters, see the file named COPYING.
    #+END_SRC
-   
+
    For å slippe å skrive =/snacks/bin/emacs-newest= hver gang kan vi lage et
    alias. Denne kommandoen legger til en linje i din =~/.bashrc=-fil:
 
@@ -99,10 +99,10 @@
 
 ** Emacs på egen maskin
 
-   Emacs er tilgjengelig på Linux, OS X og Windows. 
+   Emacs er tilgjengelig på Linux, OS X og Windows.
 
 *** Linux
-    
+
     De aller fleste pakkesystemer for Linux har Emacs 24 tilgjengelig. Her
     dekkes hvordan Emacs kan installeres for Ubuntu og Fedora, som
     bruker hhv. ~apt-get~ og ~yum~.
@@ -123,7 +123,7 @@
 
     Dersom du ikke allerede bruker [[http://brew.sh/][Homebrew]] kan du laste ned Emacs hos [[http://emacsformacosx.com/][Emacs
     For OS X]]. Det er kun å flytte Emacs fra .dmg-fila til ~Applikasjoner~.
-    
+
     For Homebrew kan du kjøre kommandoen:
 
     #+BEGIN_SRC sh
@@ -165,7 +165,7 @@
 
    Konfigurasjonsfilen blir tolket som et vanlig Emacs Lisp program, så alt
    innholdet må være Emacs Lisp kode.
-   
+
    For å begynne kan du åpne Emacs og skrive =C-x C-f RET ~/.emacs=, og
    skrive inn litt Emacs Lisp, f. eks:
 
@@ -183,7 +183,7 @@
 
    Hvordan man konfigurerer gås nøyere gjennom under kurset, og vi tar
    utgangspunkt i en enkel [[./emacs-init.el][konfigurasjonsfil]].
-   
+
 * Litt om bruk av verktøy
 
   Som informatikkstudenter jobber vi mye med å løse problemer. Når vi jobber
@@ -265,4 +265,3 @@
 
   Dette verk er lisensieret under en [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons
   Navngivelse-DelPåSammeVilkår 4.0 Internasjonal lisens]].
-
