@@ -119,7 +119,7 @@ called autosaves located wherever your .emacs.d/ is located.")
         (end (if (region-active-p) (region-end)       (point-max))))
     (whitespace-cleanup)
     (indent-region beg end nil)
-
-    (untabify beg end)))
+    (untabify (if (region-active-p) (region-beginning) (point-min))
+              (if (region-active-p) (region-end)       (point-max)))))
 ;; bindes the tidy-function to C-TAB
 (global-set-key (kbd "<C-tab>") 'tidy)
