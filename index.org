@@ -149,6 +149,11 @@
     kan laste ned ~emacs-24.3-bin-i386.zip~, eller prøve en nyere hvis det
     er tilgjengelig.
 
+    Extract mappen på et passende stad. Emacs er stand alone og trenger altså ikke å installeres.
+    Emacs kjøres ved å dobbeltklikke på filen runemacs.exe som ligger i mappen "bin".
+
+    Emacs fungerer på akkurat samme måte, men alt fungerer bedre i Linux eller på Mac.
+
 ** Konfigurere Emacs
 
    Her gang Emacs starter ser den etter en konfigurasjonsfil, den velger
